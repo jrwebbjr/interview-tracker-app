@@ -1,35 +1,38 @@
+import { FcCheckmark } from 'react-icons/fc';
+
 export default function LogForm(){
+
     return(
         <div className="form-container">
-            <form autoComplete="off" onSubmit={handleSubmit}>
-            <label>Company </label>
+            <form autoComplete="off" onSubmit="">
+            <label className="label">Company </label>
             <input 
             className="input" 
             type="text" 
             name="company" 
             value=""
-            onChange={handleChange} 
+            onChange=""
             required />
             <br/>
-            <label>Location </label>
+            <label className="label">Location </label>
             <input 
             className="input" 
             type="text" 
             name="location" 
             value=""
-            onChange={handleChange} 
+            onChange="" 
             required />
             <br/>
-            <label>Position </label>
+            <label className="label">Position </label>
             <input 
             className="input" 
             type="text" 
             name="position" 
             value=""
-            onChange={handleChange} 
+            onChange=""
             required />
             <br/>
-            <label>Date Applied </label>
+            <label className="label">Date Applied </label>
             <input 
             className="input" 
             type="text" 
@@ -37,70 +40,70 @@ export default function LogForm(){
             value="" 
             required />
             <br/>
-            <label>Status </label>
+            <label className="label">Status </label>
             <input 
             className="input" 
             type="text" 
             name="status" 
             value=""
-            onChange={handleChange} 
+            onChange="" 
             required />
             <br/>
-            <label>Career Service Used </label>
+            <label className="label">Career Service Used </label>
             <input 
             className="input" 
             type="text" 
             name="career service used" 
             value=""
-            onChange={handleChange} 
+            onChange=""
             required />
             <br/>
-            <label>Contacts </label>
+            <label className="label">Contacts </label>
             <input 
             className="input" 
             type="text" 
             name="contacts" 
             value=""
-            onChange={handleChange} 
+            onChange=""
             required />
             <br/>
-            <label>History </label>
+            <label className="label">History </label>
             <input 
             className="input" 
             type="text" 
             name="history" 
             value=""
-            onChange={handleChange} 
+            onChange=""
             required />
             <br/>
-            <label>Interview Process </label>
+            <label className="label">Interview Process </label>
             <input 
             className="input" 
             type="text" 
             name="interview process" 
             value=""
-            onChange={handleChange} 
+            onChange="" 
             required />
             <br/>
-            <label>Interview Notes </label>
+            <label className="label">Interview Notes </label>
             <input 
             className="input" 
             type="text" 
             name="interview notes" 
             value=""
-            onChange={handleChange} 
+            onChange="" 
             required />
             <br/>
-            <label>Technical Review </label>
+            <label className="label">Technical Review </label>
             <input 
             className="input" 
             type="text" 
             name="technical review" 
             value=""
-            onChange={handleChange} 
+            onChange="" 
             required />
             <br/>
-            <button className="button" type="submit">Submit Log</button>
+            <button className="button" type="submit">Submit <FcCheckmark /></button>
             </form>
         </div>
     )
