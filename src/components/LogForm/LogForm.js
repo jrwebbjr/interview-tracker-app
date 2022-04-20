@@ -49,11 +49,11 @@ export default function LogForm(){
             onChange="" 
             required />
             <br/>
-            <label className="label">Career Service Used </label>
+            <label className="label">Application Service </label>
             <input 
             className="input" 
             type="text" 
-            name="career service used" 
+            name="application service" 
             value=""
             onChange=""
             required />

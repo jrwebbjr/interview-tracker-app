@@ -9,6 +9,8 @@ function App() {
   return (
     <main className="App">
       <LogForm />
+      <Home />
+      <Show />
     </main>
   );
 }
