@@ -6,7 +6,6 @@
   font-family: effra,sans-serif;
   font-weight: 400;
   font-style: normal;
-  height: max-content;
   padding: 190px;
 }
 
@@ -34,4 +33,32 @@
   padding: 5px;
   align-items: center;
   border-radius: 4px;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  background-color: rgb(8, 61, 119);
+  padding: 20px;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  color: white;
+  padding-right: 10px;
+}
+
+.nav-links {
+  display: flex;
+  margin-right: 20px;
+}
+
+.sign-in {
+  display: flex;
+  align-items: flex-end;
+}
+
+.search {
+  box-sizing: border-box;
 }
