@@ -40,10 +40,12 @@
 .logo {
   color: rgb(232, 116, 97);
   margin-left: 50px;
-  font-family: kosetsu-solid,sans-serif;
-  font-weight: 400;
+  font-family: omnium-tagline, sans-serif;
+  font-weight: 500;
   font-style: normal;
-  font-size: 72px;
+  font-size: 30px;
+  padding: 10px;
+  border: 5px solid rgb(232, 232, 232);
 }
 
 .navbar {
@@ -53,7 +55,8 @@
   justify-content: space-between;
   background: linear-gradient(217deg, rgba(18, 67, 125), rgba(15,0,0,0) 95.71%),
               linear-gradient(127deg, rgba(18, 67, 125), rgba(0,15,0,0) 80.71%);
-  padding: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .nav-list {
