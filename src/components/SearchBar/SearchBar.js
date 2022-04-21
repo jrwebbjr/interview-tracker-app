@@ -1,7 +1,10 @@
+import { BsSearch } from "react-icons/bs";
+
 export default function SearchBar(){
     return (
         <div class="search">
-            <input type="search" placeholder="search..." />
+            <BsSearch className="icon" />
+            <input type="search" placeholder="search logs..." />
         </div>
     )
 }

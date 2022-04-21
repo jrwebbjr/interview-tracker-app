@@ -6,13 +6,15 @@
   font-family: effra,sans-serif;
   font-weight: 400;
   font-style: normal;
-  padding: 190px;
+  height: 100vh;
+  width: 100vw;
 }
 
 .form-container {
   border: .5px solid black;
-  background-image: linear-gradient(to right,rgb(162, 227, 196), rgb(102, 177, 136));
+  background-color: rgb(232, 232, 232);
   display: flex;
+  flex-shrink: initial;
   flex-direction: column;
   padding: 50px;
 }
@@ -35,11 +37,23 @@
   border-radius: 4px;
 }
 
+.logo {
+  color: rgb(232, 116, 97);
+  margin-left: 50px;
+  font-family: kosetsu-solid,sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 72px;
+}
+
 .navbar {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  background-color: rgb(8, 61, 119);
-  padding: 20px;
+  justify-content: space-between;
+  background: linear-gradient(217deg, rgba(18, 67, 125), rgba(15,0,0,0) 95.71%),
+              linear-gradient(127deg, rgba(18, 67, 125), rgba(0,15,0,0) 80.71%);
+  padding: 5px;
 }
 
 .nav-list {
@@ -54,11 +68,15 @@
   margin-right: 20px;
 }
 
-.sign-in {
+.search {
   display: flex;
-  align-items: flex-end;
+  box-sizing: border-box;
+  border-radius: 4px;
+  color: white;
+  justify-content: end;
+  margin-right: 50px;
 }
 
-.search {
-  box-sizing: border-box;
+.icon {
+  margin-right: 10px;
 }
