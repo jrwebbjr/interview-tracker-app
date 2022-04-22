@@ -8,3 +8,5 @@ export default function SearchBar(){
         </div>
     )
 }
+
+//TODO: add functionality to search through jobs by any value

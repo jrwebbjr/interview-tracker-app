@@ -5,3 +5,5 @@ export default function Jobs(){
         </>
     )
 }
+
+//TODO: Map through DB of jobs and show them all in cards

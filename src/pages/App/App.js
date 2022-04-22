@@ -16,3 +16,5 @@ function App() {
 }
 
 export default App;
+
+//TODO: set up ternary to show Home page if !user and jobs if user is signed in

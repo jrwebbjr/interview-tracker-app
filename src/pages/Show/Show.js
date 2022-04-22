@@ -9,3 +9,5 @@ export default function Show(){
         
     )
 }
+
+//TODO: Show selected job and have an update button to take to edit route for updates

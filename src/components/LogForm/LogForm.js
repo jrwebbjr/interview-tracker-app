@@ -135,3 +135,5 @@ export default function LogForm(){
         </div>
     )
 }
+
+//TODO: finish out form posting after backend is set up. Make sure user Jobs page renders after new job is added
