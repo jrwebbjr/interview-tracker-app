@@ -1,4 +1,4 @@
-import SearchBar from "../SearchBar/SearchBar";
+import SearchBar from "../searchBar/SearchBar";
 import { TiHome } from "react-icons/ti";
 import { TiDocumentAdd } from "react-icons/ti";
 import { TiUser } from "react-icons/ti";
