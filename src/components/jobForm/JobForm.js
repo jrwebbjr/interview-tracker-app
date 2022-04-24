@@ -1,31 +1,44 @@
 import { useState } from "react";
 import { FcCheckmark } from 'react-icons/fc';
 
-export default function jobForm(){
-    const [job, setJog] = useState('')
+export default function JobForm(){
+    const [jobForm, setJobForm] = useState({
+        company: '',
+        location: '',
+        position: '',
+        date: '',
+        jobStatus: '',
+        service: '',
+        contacts: '',
+        history: '',
+        process: '',
+        notes: '',
+        technical: ''
+    })
     const [isPending, setIsPending] = useState(false);
 
     const handleChange = (e) => {
-        setJob({...setJob, [e.target]: e.target.value })
+        setJobForm({...jobForm, [e.target.name]: e.target.value })
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
+        //prevents page from refreshing
         e.preventDefault();
-
-        const job = { company, location, position, date, jobStatus, service, contacts, history, process, notes, technical };
-
+        
         setIsPending(true);
         
-
-        fetch(`http://localhost:3000/jobs/${id}`, {
+        try{ 
+            const res = await fetch("/api/jobs/", {
             method: "POST",
             headers: { "Content-Type": "application/json"},
-            body: JSON.stringify(job)
-        }).then(() => {
-            console.log("new job added");
-            setIsPending(false);
+            body: JSON.stringify(jobForm)
         })
+        }catch(e) {
+            console.error(e)
+    } finally {
+        setIsPending(false)
     }
+}
 
     return(
         <div className="form-container">
@@ -35,7 +48,7 @@ export default function jobForm(){
             className="input" 
             type="text" 
             name="company" 
-            value="company"
+            value={jobForm.company}
             onChange={handleChange}
             required />
             <br/>
@@ -44,7 +57,7 @@ export default function jobForm(){
             className="input" 
             type="text" 
             name="location" 
-            value="location"
+            value={jobForm.location}
             onChange={handleChange} 
             required />
             <br/>
@@ -53,16 +66,16 @@ export default function jobForm(){
             className="input" 
             type="text" 
             name="position" 
-            value="position"
+            value={jobForm.position}
             onChange={handleChange}
             required />
             <br/>
             <label className="label">Date Applied </label>
             <input 
             className="input" 
-            type="text" 
+            type="date" 
             name="date" 
-            value="date" 
+            value={jobForm.date} 
             onChange={handleChange}
             required />
             <br/>
@@ -71,7 +84,7 @@ export default function jobForm(){
             className="input" 
             type="text" 
             name="status" 
-            value="status"
+            value={jobForm.status}
             onChange={handleChange} 
             required />
             <br/>
@@ -79,8 +92,8 @@ export default function jobForm(){
             <input 
             className="input" 
             type="text" 
-            name="application-service" 
-            value="service"
+            name="service" 
+            value={jobForm.service}
             onChange={handleChange}
             required />
             <br/>
@@ -89,7 +102,7 @@ export default function jobForm(){
             className="input" 
             type="text" 
             name="contacts" 
-            value="contacts"
+            value={jobForm.contacts}
             onChange={handleChange}
             required />
             <br/>
@@ -98,7 +111,7 @@ export default function jobForm(){
             className="input" 
             type="text" 
             name="history" 
-            value="history"
+            value={jobForm.history}
             onChange={handleChange}
             required />
             <br/>
@@ -106,8 +119,8 @@ export default function jobForm(){
             <input 
             className="input" 
             type="text" 
-            name="interview-process" 
-            value="process"
+            name="process" 
+            value={jobForm.process}
             onChange={handleChange}
             required />
             <br/>
@@ -115,8 +128,8 @@ export default function jobForm(){
             <input 
             className="input" 
             type="text" 
-            name="interview-notes" 
-            value="notes"
+            name="notes" 
+            value={jobForm.notes}
             onChange={handleChange} 
             required />
             <br/>
@@ -124,12 +137,12 @@ export default function jobForm(){
             <input 
             className="input" 
             type="text" 
-            name="technical-notes" 
-            value="technical"
+            name="technical" 
+            value={jobForm.technical}
             onChange={handleChange}
             required />
             <br/>
-            { !isPending && <button onClick="" className="button" type="submit">Add Job <FcCheckmark /></button> }
+            { !isPending && <button className="button" type="submit">Add Job <FcCheckmark /></button> }
             { isPending && <button disabled className="button" type="submit">Adding Job... <FcCheckmark /></button> }
             </form>
         </div>

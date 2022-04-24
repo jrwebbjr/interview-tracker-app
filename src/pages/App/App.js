@@ -1,16 +1,16 @@
 
 import '../../../src/App.css';
 import Home from "../home/Home";
-import LogForm from "../../components/logForm/LogForm";
-import Show from "../show/Show";
-import Edit from "../edit/Edit";
+import JobForm from "../../components/jobForm/JobForm";
+// import Show from "../show/Show";
+// import Edit from "../edit/Edit";
 import NavBar from '../../components/navBar.js/NavBar';
 
 function App() {
   return (
     <main className="App">
       <NavBar />
-      <LogForm />
+      <JobForm />
     </main>
   );
 }
