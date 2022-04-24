@@ -1,4 +1,10 @@
-
+:root {
+  --custom-white: rgb(232, 232, 232);
+  --terra-cotta: rgb(232, 116, 97);
+  --baby-powder: rgb(241, 245, 242);
+  --blue-denim: rgb(18, 67, 125);
+  --celadon: rgb(186, 217, 181);
+}
 
 .App {
   text-align: center;
@@ -6,8 +12,13 @@
   font-family: effra,sans-serif;
   font-weight: 400;
   font-style: normal;
+  height: 100%;
+}
+
+body {
+  background-color: rgb(232, 232, 232);
   height: 100vh;
-  width: 100vw;
+  padding: 2vmin;
 }
 
 .form-container {

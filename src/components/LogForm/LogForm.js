@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { FcCheckmark } from 'react-icons/fc';
 
-export default function LogForm(){
-    const [log, setLog] = useState('')
+export default function jobForm(){
+    const [job, setJog] = useState('')
     const [isPending, setIsPending] = useState(false);
 
     const handleChange = (e) => {
-        setLog({...setLog, [e.target]: e.target.value })
+        setJob({...setJob, [e.target]: e.target.value })
     }
 
     const handleSubmit = (e) => {
@@ -36,7 +36,7 @@ export default function LogForm(){
             type="text" 
             name="company" 
             value="company"
-            onChange={(e) => setLog(e.target.value) }
+            onChange={handleChange}
             required />
             <br/>
             <label className="label">Location </label>
@@ -45,7 +45,7 @@ export default function LogForm(){
             type="text" 
             name="location" 
             value="location"
-            onChange={(e) => setLog(e.target.value) } 
+            onChange={handleChange} 
             required />
             <br/>
             <label className="label">Position </label>
@@ -54,7 +54,7 @@ export default function LogForm(){
             type="text" 
             name="position" 
             value="position"
-            onChange={(e) => setLog(e.target.value) }
+            onChange={handleChange}
             required />
             <br/>
             <label className="label">Date Applied </label>
@@ -63,7 +63,7 @@ export default function LogForm(){
             type="text" 
             name="date" 
             value="date" 
-            onChange={(e) => setLog(e.target.value) }
+            onChange={handleChange}
             required />
             <br/>
             <label className="label">Status </label>
@@ -72,7 +72,7 @@ export default function LogForm(){
             type="text" 
             name="status" 
             value="status"
-            onChange={(e) => setLog(e.target.value) } 
+            onChange={handleChange} 
             required />
             <br/>
             <label className="label">Application Service </label>
@@ -81,7 +81,7 @@ export default function LogForm(){
             type="text" 
             name="application-service" 
             value="service"
-            onChange={(e) => setLog(e.target.value) }
+            onChange={handleChange}
             required />
             <br/>
             <label className="label">Contacts </label>
@@ -90,7 +90,7 @@ export default function LogForm(){
             type="text" 
             name="contacts" 
             value="contacts"
-            onChange={(e) => setLog(e.target.value) }
+            onChange={handleChange}
             required />
             <br/>
             <label className="label">Meeting History </label>
@@ -99,7 +99,7 @@ export default function LogForm(){
             type="text" 
             name="history" 
             value="history"
-            onChange={(e) => setLog(e.target.value) }
+            onChange={handleChange}
             required />
             <br/>
             <label className="label">Interview Process </label>
@@ -108,7 +108,7 @@ export default function LogForm(){
             type="text" 
             name="interview-process" 
             value="process"
-            onChange={(e) => setLog(e.target.value) }
+            onChange={handleChange}
             required />
             <br/>
             <label className="label">Interview Notes </label>
@@ -117,7 +117,7 @@ export default function LogForm(){
             type="text" 
             name="interview-notes" 
             value="notes"
-            onChange={(e) => setLog(e.target.value) } 
+            onChange={handleChange} 
             required />
             <br/>
             <label className="label">Technical Notes </label>
@@ -126,10 +126,10 @@ export default function LogForm(){
             type="text" 
             name="technical-notes" 
             value="technical"
-            onChange={(e) => setLog(e.target.value) }
+            onChange={handleChange}
             required />
             <br/>
-            { !isPending && <button className="button" type="submit">Add Job <FcCheckmark /></button> }
+            { !isPending && <button onClick="" className="button" type="submit">Add Job <FcCheckmark /></button> }
             { isPending && <button disabled className="button" type="submit">Adding Job... <FcCheckmark /></button> }
             </form>
         </div>
