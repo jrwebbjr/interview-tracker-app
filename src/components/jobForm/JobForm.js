@@ -28,13 +28,13 @@ export default function JobForm(){
         setIsPending(true);
         
         try{ 
-            const res = await fetch("/api/jobs/", {
+            const res = await fetch("/api/jobs", {
             method: "POST",
             headers: { "Content-Type": "application/json"},
             body: JSON.stringify(jobForm)
         })
-        }catch(e) {
-            console.error(e)
+        }catch(error) {
+            console.error(error)
     } finally {
         setIsPending(false)
     }
@@ -86,7 +86,7 @@ export default function JobForm(){
             name="status" 
             value={jobForm.status}
             onChange={handleChange} 
-            required />
+            />
             <br/>
             <label className="label">Application Service </label>
             <input 
@@ -95,7 +95,7 @@ export default function JobForm(){
             name="service" 
             value={jobForm.service}
             onChange={handleChange}
-            required />
+            />
             <br/>
             <label className="label">Contacts </label>
             <input 
@@ -104,7 +104,7 @@ export default function JobForm(){
             name="contacts" 
             value={jobForm.contacts}
             onChange={handleChange}
-            required />
+            />
             <br/>
             <label className="label">Meeting History </label>
             <input 
@@ -113,7 +113,7 @@ export default function JobForm(){
             name="history" 
             value={jobForm.history}
             onChange={handleChange}
-            required />
+            />
             <br/>
             <label className="label">Interview Process </label>
             <input 
@@ -122,7 +122,7 @@ export default function JobForm(){
             name="process" 
             value={jobForm.process}
             onChange={handleChange}
-            required />
+            />
             <br/>
             <label className="label">Interview Notes </label>
             <input 
@@ -131,7 +131,7 @@ export default function JobForm(){
             name="notes" 
             value={jobForm.notes}
             onChange={handleChange} 
-            required />
+            />
             <br/>
             <label className="label">Technical Notes </label>
             <input 
@@ -140,7 +140,7 @@ export default function JobForm(){
             name="technical" 
             value={jobForm.technical}
             onChange={handleChange}
-            required />
+            />
             <br/>
             { !isPending && <button className="button" type="submit">Add Job <FcCheckmark /></button> }
             { isPending && <button disabled className="button" type="submit">Adding Job... <FcCheckmark /></button> }

@@ -1,9 +1,9 @@
-import NavBar from "../../components/navBar.js/NavBar";
+import DefaultLayout from "../layout/DefaultLayout";
 
 export default function Show(){
     return (
         <div>
-            <NavBar />
+            <DefaultLayout />
             <h1>Show Page</h1>
         </div>
         

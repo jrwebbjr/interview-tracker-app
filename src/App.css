@@ -49,14 +49,17 @@ body {
 }
 
 .logo {
-  color: rgb(232, 116, 97);
+  color: var(--baby-powder);
   margin-left: 50px;
   font-family: omnium-tagline, sans-serif;
   font-weight: 500;
   font-style: normal;
   font-size: 30px;
   padding: 10px;
-  border: 5px solid rgb(232, 232, 232);
+}
+
+.pencil {
+  color: goldenrod;
 }
 
 .navbar {
