@@ -1,16 +1,21 @@
 
 import '../../../src/App.css';
-import Home from "../home/Home";
+import { Route, Routes } from 'react-router-dom';
+// import Home from "../home/Home";
 import JobForm from "../../components/jobForm/JobForm";
 // import Show from "../show/Show";
 // import Edit from "../edit/Edit";
-import NavBar from '../../components/navBar.js/NavBar';
+import Jobs from "../jobs/Jobs";
+// import NavBar from '../../components/navBar.js/NavBar';
 
 function App() {
   return (
     <main className="App">
-      <NavBar />
-      <JobForm />
+      <Routes>
+        <Route path='/form' element={<JobForm />} />
+        <Route path='/jobs' element={<Jobs />} />
+        <Route path='/' element={<h1>Home</h1>} />
+      </Routes>
     </main>
   );
 }

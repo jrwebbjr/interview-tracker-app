@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FcCheckmark } from 'react-icons/fc';
+import { useNavigate } from "react-router-dom";
 
 export default function JobForm(){
     const [jobForm, setJobForm] = useState({
@@ -7,7 +8,7 @@ export default function JobForm(){
         location: '',
         position: '',
         date: '',
-        jobStatus: '',
+        status: '',
         service: '',
         contacts: '',
         history: '',
@@ -16,6 +17,8 @@ export default function JobForm(){
         technical: ''
     })
     const [isPending, setIsPending] = useState(false);
+
+    const Navigate = useNavigate();
 
     const handleChange = (e) => {
         setJobForm({...jobForm, [e.target.name]: e.target.value })
@@ -31,8 +34,8 @@ export default function JobForm(){
             const res = await fetch("/api/jobs", {
             method: "POST",
             headers: { "Content-Type": "application/json"},
-            body: JSON.stringify(jobForm)
-        })
+            body: JSON.stringify(jobForm),
+        }); Navigate('/jobs');
         }catch(error) {
             console.error(error)
     } finally {
@@ -86,7 +89,7 @@ export default function JobForm(){
             name="status" 
             value={jobForm.status}
             onChange={handleChange} 
-            />
+            required />
             <br/>
             <label className="label">Application Service </label>
             <input 
@@ -95,7 +98,7 @@ export default function JobForm(){
             name="service" 
             value={jobForm.service}
             onChange={handleChange}
-            />
+            required />
             <br/>
             <label className="label">Contacts </label>
             <input 
@@ -104,7 +107,7 @@ export default function JobForm(){
             name="contacts" 
             value={jobForm.contacts}
             onChange={handleChange}
-            />
+            required />
             <br/>
             <label className="label">Meeting History </label>
             <input 
@@ -113,7 +116,7 @@ export default function JobForm(){
             name="history" 
             value={jobForm.history}
             onChange={handleChange}
-            />
+            required />
             <br/>
             <label className="label">Interview Process </label>
             <input 
@@ -122,7 +125,7 @@ export default function JobForm(){
             name="process" 
             value={jobForm.process}
             onChange={handleChange}
-            />
+            required />
             <br/>
             <label className="label">Interview Notes </label>
             <input 
@@ -131,7 +134,7 @@ export default function JobForm(){
             name="notes" 
             value={jobForm.notes}
             onChange={handleChange} 
-            />
+            required />
             <br/>
             <label className="label">Technical Notes </label>
             <input 
@@ -140,7 +143,7 @@ export default function JobForm(){
             name="technical" 
             value={jobForm.technical}
             onChange={handleChange}
-            />
+            required />
             <br/>
             { !isPending && <button className="button" type="submit">Add Job <FcCheckmark /></button> }
             { isPending && <button disabled className="button" type="submit">Adding Job... <FcCheckmark /></button> }
