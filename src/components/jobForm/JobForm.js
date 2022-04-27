@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { FcCheckmark } from 'react-icons/fc';
 import { useNavigate } from "react-router-dom";
+import('../../index.css');
 
 export default function JobForm(){
     const [jobForm, setJobForm] = useState({
@@ -145,8 +146,8 @@ export default function JobForm(){
             onChange={handleChange}
             required />
             <br/>
-            { !isPending && <button className="button" type="submit">Add Job <FcCheckmark /></button> }
-            { isPending && <button disabled className="button" type="submit">Adding Job... <FcCheckmark /></button> }
+            { !isPending && <button className="bg-violet-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300 ..." type="submit">Add Job <FcCheckmark /></button> }
+            { isPending && <button disabled className="bg-violet-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300 ..." type="submit">Adding Job... <FcCheckmark /></button> }
             </form>
         </div>
     )
