@@ -1,4 +1,5 @@
-/* :root {
+
+:root {
   --custom-white: rgb(232, 232, 232);
   --terra-cotta: rgb(232, 116, 97);
   --baby-powder: rgb(241, 245, 242);
@@ -43,9 +44,20 @@ body {
 }
 
 .button {
-  padding: 5px;
-  align-items: center;
-  border-radius: 4px;
+  background-color: var(--blue-denim);
+  color: var(--custom-white);
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 16px;
+}
+
+.button-icon-style {
+  color: var(--custom-white);
 }
 
 .logo {
@@ -67,6 +79,7 @@ body {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+  position: sticky;
   background: linear-gradient(217deg, rgba(18, 67, 125), rgba(15,0,0,0) 95.71%),
               linear-gradient(127deg, rgba(18, 67, 125), rgba(0,15,0,0) 80.71%);
   padding-left: 5px;
@@ -96,4 +109,26 @@ body {
 
 .icon {
   margin-right: 10px;
+}
+
+/* .job-list {
+  display: flex;
+  list-style:none;
 } */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  grid-gap: 20px;
+  margin: 10px;
+}
+
+.card {
+  display: grid;
+  grid-template-rows: max-content 200px 1fr;
+  border: .1px solid rgb(18, 67, 125);
+  margin: 10px;
+  margin-top: px;
+}
+
+  

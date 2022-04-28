@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
+// import { Link } from 'react-router-dom';
 import axios from 'axios';
+import DefaultLayout from '../layout/DefaultLayout';
 import('../../index.css');
 
 export default function Jobs(){
@@ -16,13 +18,25 @@ export default function Jobs(){
 
     return(
         <>
-            <ul>
+            <DefaultLayout />
+            <div className='cards'>
                 {
                     jobs.map((job) => {
-                        return <li key={job._id}>{job.company}</li> 
+                        return (
+                            <article key={job._id} className="card">
+                                <header>
+                                    <h1>{job.company}</h1>
+                                </header>
+                                <div className='content'>
+                                    <p>{job.location}</p>
+                                    <p>{job.date}</p>
+                                </div>
+                            <a href={`/jobs/${ job._id }`}><button className='button'>Open</button></a> 
+                            </article>
+                        ) 
                     })
                 }         
-            </ul>
+            </div>
         </>
         )
 }

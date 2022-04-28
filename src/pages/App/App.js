@@ -6,6 +6,7 @@ import JobForm from "../../components/jobForm/JobForm";
 // import Show from "../show/Show";
 // import Edit from "../edit/Edit";
 import Jobs from "../jobs/Jobs";
+import ShowJob from '../showJob/ShowJob';
 // import NavBar from '../../components/navBar.js/NavBar';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Route path='/form' element={<JobForm />} />
         <Route path='/jobs' element={<Jobs />} />
         <Route path='/' element={<h1>Home</h1>} />
+        <Route path='/jobs/:id' element={<ShowJob />} />
       </Routes>
     </main>
   );
