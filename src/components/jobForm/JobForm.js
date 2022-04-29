@@ -42,118 +42,334 @@ export default function JobForm(){
         setIsPending(false)
     }
 }
-
     return(
         <div>
             <div className="form-container">
                 <form autoComplete="off" onSubmit={handleSubmit}>
-                <label className="label">Company </label>
-                <input 
-                className="form-input [type='text']" 
-                type="text" 
-                name="company" 
-                value={jobForm.company}
-                onChange={handleChange}
-                required />
-                <br/>
-                <label className="label">Location </label>
-                <input 
-                className="form-input [type='text']"  
-                type="text" 
-                name="location" 
-                value={jobForm.location}
-                onChange={handleChange} 
-                required />
-                <br/>
-                <label className="label">Position </label>
-                <input 
-                className="form-input [type='text']" 
-                type="text" 
-                name="position" 
-                value={jobForm.position}
-                onChange={handleChange}
-                required />
-                <br/>
-                <div class="flex items-center justify-center">
-                    <div class="datepicker relative form-floating mb-3 xl:w-96" data-mdb-toggle-button="false">
-                        <input type="text"
-                        value={jobForm.date}
+                <div class="flex justify-center">
+                    <div class="mb-3 xl:w-96">
+                        <label for="exampleText0" class="form-label inline-block mb-2 text-gray-700">Company</label>
+                        <input
+                        type="text"
+                        name="company" 
+                        value={jobForm.company}
                         onChange={handleChange}
                         required
-                        class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                        placeholder="Select a date" />
-                        <label for="floatingInput" class="text-gray-700">Select a date</label>
-                        <button class="datepicker-toggle-button" data-mdb-toggle="datepicker">
-                        <i class="fas fa-calendar datepicker-toggle-icon"></i>
-                        </button>
+                        class="
+                            form-control
+                            block
+                            w-full
+                            px-3
+                            py-1.5
+                            text-base
+                            font-normal
+                            text-gray-700
+                            bg-white bg-clip-padding
+                            border border-solid border-gray-300
+                            rounded
+                            shadow-lg
+                            transition
+                            ease-in-out
+                            m-0
+                            focus:text-gray-700 focus:bg-white focus:border-fuchsia-600 focus:outline-none
+                        "/>
                     </div>
                 </div>
                 <br/>
-                <label className="label">Status </label>
-                <input 
-                className="form-input [type='text']"  
-                type="text" 
-                name="status" 
-                value={jobForm.status}
-                onChange={handleChange} 
-                required />
+                <div class="flex justify-center">
+                    <div class="mb-3 xl:w-96">
+                        <label for="exampleText0" class="form-label inline-block mb-2 text-gray-700">Location</label>
+                        <input
+                        type="text"
+                        name="location" 
+                        value={jobForm.location}
+                        onChange={handleChange} 
+                        required
+                        class="
+                            form-control
+                            block
+                            w-full
+                            px-3
+                            py-1.5
+                            text-base
+                            font-normal
+                            text-gray-700
+                            bg-white bg-clip-padding
+                            border border-solid border-gray-300
+                            rounded
+                            shadow-lg
+                            transition
+                            ease-in-out
+                            m-0
+                            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+                        "/>
+                    </div>
+                </div>
                 <br/>
-                <label className="label">Application Service </label>
-                <input 
-                className="form-input [type='text']" 
-                type="text" 
-                name="service" 
-                value={jobForm.service}
-                onChange={handleChange}
-                required />
+                <div class="flex justify-center">
+                    <div class="mb-3 xl:w-96">
+                        <label for="exampleText0" class="form-label inline-block mb-2 text-gray-700">Date</label>
+                        <input
+                        type="date"
+                        name="date" 
+                        value={jobForm.date}
+                        onChange={handleChange}
+                        required
+                        class="
+                            form-control
+                            block
+                            w-full
+                            px-3
+                            py-1.5
+                            text-base
+                            font-normal
+                            text-gray-700
+                            bg-white bg-clip-padding
+                            border border-solid border-gray-300
+                            rounded
+                            shadow-lg
+                            transition
+                            ease-in-out
+                            m-0
+                            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+                        "
+                        id="exampleText0"/>
+                    </div>
+                </div>
                 <br/>
-                <label className="label">Contacts </label>
-                <input 
-                className="form-input [type='text']"  
-                type="text" 
-                name="contacts" 
-                value={jobForm.contacts}
-                onChange={handleChange}
-                required />
+                <div class="flex justify-center">
+                    <div class="mb-3 xl:w-96">
+                        <label for="exampleText0" class="form-label inline-block mb-2 text-gray-700">Position</label>
+                        <input
+                        type="text"
+                        name="position"
+                        value={jobForm.position}
+                        onChange={handleChange}
+                        class="
+                            form-control
+                            block
+                            w-full
+                            px-3
+                            py-1.5
+                            text-base
+                            font-normal
+                            text-gray-700
+                            bg-white bg-clip-padding
+                            border border-solid border-gray-300
+                            rounded
+                            shadow-lg
+                            transition
+                            ease-in-out
+                            m-0
+                            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+                        "/>
+                    </div>
+                </div>
                 <br/>
-                <label className="label">Meeting History </label>
-                <input 
-                className="form-input [type='text']"  
-                type="text" 
-                name="history" 
-                value={jobForm.history}
-                onChange={handleChange}
-                required />
+                <div class="flex justify-center">
+                    <div class="mb-3 xl:w-96">
+                        <label for="exampleText0" class="form-label inline-block mb-2 text-gray-700">Application Status</label>
+                        <input
+                        type="text"
+                        name="status"
+                        value={jobForm.status}
+                        onChange={handleChange} 
+                        class="
+                            form-control
+                            block
+                            w-full
+                            px-3
+                            py-1.5
+                            text-base
+                            font-normal
+                            text-gray-700
+                            bg-white bg-clip-padding
+                            border border-solid border-gray-300
+                            rounded
+                            shadow-lg
+                            transition
+                            ease-in-out
+                            m-0
+                            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+                        "/>
+                    </div>
+                </div>
                 <br/>
-                <label className="label">Interview Process </label>
-                <input 
-                className="form-input [type='text']" 
-                type="text" 
-                name="process" 
-                value={jobForm.process}
-                onChange={handleChange}
-                required />
+                <div class="flex justify-center">
+                    <div class="mb-3 xl:w-96">
+                        <label for="Application Service" class="form-label inline-block mb-2 text-gray-700">Application Service</label>
+                        <input
+                        type="text"
+                        name="service"
+                        value={jobForm.service}
+                        onChange={handleChange}
+                        class="
+                            form-control
+                            block
+                            w-full
+                            px-3
+                            py-1.5
+                            text-base
+                            font-normal
+                            text-gray-700
+                            bg-white bg-clip-padding
+                            border border-solid border-gray-300
+                            rounded
+                            shadow-lg
+                            transition
+                            ease-in-out
+                            m-0
+                            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+                        "/>
+                    </div>
+                </div>
                 <br/>
-                <label className="label">Interview Notes </label>
-                <input 
-                className="form-input [type='text']"  
-                type="text" 
-                name="notes" 
-                value={jobForm.notes}
-                onChange={handleChange} 
-                required />
+                <div class="flex justify-center">
+                    <div class="mb-3 xl:w-96">
+                        <label for="Contacts" class="form-label inline-block mb-2 text-gray-700">Company Contacts</label>
+                        <input
+                        type="text"
+                        name="contacts"
+                        value={jobForm.contacts}
+                        onChange={handleChange}
+                        class="
+                            form-control
+                            block
+                            w-full
+                            px-3
+                            py-1.5
+                            text-base
+                            font-normal
+                            text-gray-700
+                            bg-white bg-clip-padding
+                            border border-solid border-gray-300
+                            rounded
+                            shadow-lg
+                            transition
+                            ease-in-out
+                            m-0
+                            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+                        "/>
+                    </div>
+                </div>
                 <br/>
-                <label className="label">Technical Notes </label>
-                <input 
-                className="form-input [type='text']"  
-                type="text" 
-                name="technical" 
-                value={jobForm.technical}
-                onChange={handleChange}
-                required />
+                <div class="flex justify-center">
+                    <div class="mb-3 xl:w-96">
+                        <label for="History" class="form-label inline-block mb-2 text-gray-700">Meeting History</label>
+                        <input
+                        type="text"
+                        name="history"
+                        value={jobForm.history}
+                        onChange={handleChange}
+                        class="
+                            form-control
+                            block
+                            w-full
+                            px-3
+                            py-1.5
+                            text-base
+                            font-normal
+                            text-gray-700
+                            bg-white bg-clip-padding
+                            border border-solid border-gray-300
+                            rounded
+                            shadow-lg
+                            transition
+                            ease-in-out
+                            m-0
+                            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+                        "/>
+                    </div>
+                </div>
                 <br/>
-                { !isPending && <button className="button" type="submit">Add Job</button> }
-                { isPending && <button disabled className="button" type="submit">Adding Job... </button> }
+                <div class="flex justify-center">
+                    <div class="mb-3 xl:w-96">
+                        <label for="Interview Process" class="form-label inline-block mb-2 text-gray-700">Interview Process</label>
+                        <input
+                        type="text"
+                        name="process"
+                        value={jobForm.process}
+                        onChange={handleChange}
+                        class="
+                            form-control
+                            block
+                            w-full
+                            px-3
+                            py-1.5
+                            text-base
+                            font-normal
+                            text-gray-700
+                            bg-white bg-clip-padding
+                            border border-solid border-gray-300
+                            rounded
+                            shadow-lg
+                            transition
+                            ease-in-out
+                            m-0
+                            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+                        "/>
+                    </div>
+                </div>
+                <br/>
+                <div class="flex justify-center">
+                    <div class="mb-3 xl:w-96">
+                        <label for="interview notes" class="form-label inline-block mb-2 text-gray-700">Interview Notes</label>
+                            <textarea 
+                            class="
+                            form-control
+                            block
+                            w-full
+                            px-3
+                            py-1.5
+                            text-base
+                            font-normal
+                            text-gray-700
+                            bg-white bg-clip-padding
+                            border border-solid border-gray-300
+                            rounded
+                            shadow-lg
+                            transition
+                            ease-in-out
+                            m-0
+                            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+                            "
+                            id="interview-notes-text-area"
+                            rows="5">
+                        </textarea>
+                    </div>
+                </div>
+                <br/>
+                <div class="flex justify-center">
+                    <div class="mb-3 xl:w-96">
+                        <label for="Technical Notes" class="form-label inline-block mb-2 text-gray-700">Technical Notes</label>
+                        <textarea
+                        value={jobForm.technical}
+                        onChange={handleChange}
+                        class="
+                            form-control
+                            block
+                            w-full
+                            px-3
+                            py-1.5
+                            text-base
+                            font-normal
+                            text-gray-700
+                            bg-white bg-clip-padding
+                            border border-solid border-gray-300
+                            rounded
+                            shadow-lg
+                            transition
+                            ease-in-out
+                            m-0
+                            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+                        "
+                        rows="5">
+                        </textarea>
+                    </div>
+                </div>
+                <br/>
+                { !isPending && <button className="text-white p-2 rounded-full bg-indigo-600 shadow-lg" type="submit">Add Job</button> }
+                { isPending && <button disabled className="text-white rounded-full bg-indigo-600 opacity-50 shadow-lg" type="submit">Adding Job... </button> }
                 </form>
             </div>
         </div>
