@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 
 :root {
   --custom-white: rgb(232, 232, 232);

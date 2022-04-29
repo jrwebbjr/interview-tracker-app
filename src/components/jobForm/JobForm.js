@@ -1,9 +1,5 @@
 import { useState } from "react";
-import { MdAddBox } from 'react-icons/md';
-import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 import { useNavigate } from "react-router-dom";
-import DefaultLayout from "../../pages/layout/DefaultLayout";
-import('../../index.css');
 import('../../App.css');
 
 export default function JobForm(){
@@ -49,12 +45,11 @@ export default function JobForm(){
 
     return(
         <div>
-            <DefaultLayout />
             <div className="form-container">
                 <form autoComplete="off" onSubmit={handleSubmit}>
                 <label className="label">Company </label>
                 <input 
-                className="input" 
+                className="form-input [type='text']" 
                 type="text" 
                 name="company" 
                 value={jobForm.company}
@@ -63,7 +58,7 @@ export default function JobForm(){
                 <br/>
                 <label className="label">Location </label>
                 <input 
-                className="input" 
+                className="form-input [type='text']"  
                 type="text" 
                 name="location" 
                 value={jobForm.location}
@@ -72,25 +67,31 @@ export default function JobForm(){
                 <br/>
                 <label className="label">Position </label>
                 <input 
-                className="input" 
+                className="form-input [type='text']" 
                 type="text" 
                 name="position" 
                 value={jobForm.position}
                 onChange={handleChange}
                 required />
                 <br/>
-                <label className="label">Date Applied </label>
-                <input 
-                className="input" 
-                type="date" 
-                name="date" 
-                value={jobForm.date} 
-                onChange={handleChange}
-                required />
+                <div class="flex items-center justify-center">
+                    <div class="datepicker relative form-floating mb-3 xl:w-96" data-mdb-toggle-button="false">
+                        <input type="text"
+                        value={jobForm.date}
+                        onChange={handleChange}
+                        required
+                        class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                        placeholder="Select a date" />
+                        <label for="floatingInput" class="text-gray-700">Select a date</label>
+                        <button class="datepicker-toggle-button" data-mdb-toggle="datepicker">
+                        <i class="fas fa-calendar datepicker-toggle-icon"></i>
+                        </button>
+                    </div>
+                </div>
                 <br/>
                 <label className="label">Status </label>
                 <input 
-                className="input" 
+                className="form-input [type='text']"  
                 type="text" 
                 name="status" 
                 value={jobForm.status}
@@ -99,7 +100,7 @@ export default function JobForm(){
                 <br/>
                 <label className="label">Application Service </label>
                 <input 
-                className="input" 
+                className="form-input [type='text']" 
                 type="text" 
                 name="service" 
                 value={jobForm.service}
@@ -108,7 +109,7 @@ export default function JobForm(){
                 <br/>
                 <label className="label">Contacts </label>
                 <input 
-                className="input" 
+                className="form-input [type='text']"  
                 type="text" 
                 name="contacts" 
                 value={jobForm.contacts}
@@ -117,7 +118,7 @@ export default function JobForm(){
                 <br/>
                 <label className="label">Meeting History </label>
                 <input 
-                className="input" 
+                className="form-input [type='text']"  
                 type="text" 
                 name="history" 
                 value={jobForm.history}
@@ -126,7 +127,7 @@ export default function JobForm(){
                 <br/>
                 <label className="label">Interview Process </label>
                 <input 
-                className="input" 
+                className="form-input [type='text']" 
                 type="text" 
                 name="process" 
                 value={jobForm.process}
@@ -135,7 +136,7 @@ export default function JobForm(){
                 <br/>
                 <label className="label">Interview Notes </label>
                 <input 
-                className="input" 
+                className="form-input [type='text']"  
                 type="text" 
                 name="notes" 
                 value={jobForm.notes}
@@ -144,15 +145,15 @@ export default function JobForm(){
                 <br/>
                 <label className="label">Technical Notes </label>
                 <input 
-                className="input" 
+                className="form-input [type='text']"  
                 type="text" 
                 name="technical" 
                 value={jobForm.technical}
                 onChange={handleChange}
                 required />
                 <br/>
-                { !isPending && <button className="button" type="submit">Add Job <MdAddBox className="button-icon-style" /></button> }
-                { isPending && <button disabled className="button" type="submit">Adding Job... <AiOutlineLoading3Quarters /></button> }
+                { !isPending && <button className="button" type="submit">Add Job</button> }
+                { isPending && <button disabled className="button" type="submit">Adding Job... </button> }
                 </form>
             </div>
         </div>
