@@ -1,21 +1,21 @@
 
 import '../../../src/App.css';
 import { Route, Routes } from 'react-router-dom';
+import DefaultLayout from '../layout/DefaultLayout';
 // import Home from "../home/Home";
-import JobForm from "../../components/jobForm/JobForm";
-// import DefaultLayout from '../layout/DefaultLayout';
+import JobForm from "../../components/JobForm";
+import Update from "../Update/Update";
 // import Show from "../show/Show";
 // import Edit from "../edit/Edit";
-import Jobs from "../jobs/Jobs";
+import Jobs from "../jobIndex/JobIndex";
 import ShowJob from '../showJob/ShowJob';
-// import NavBar from '../../components/navBar.js/NavBar';
 
 function App() {
   return (
-    <main className='m-10 border-2 p-10'>
-      {/* <DefaultLayout /> */}
+    <main className='m-0 border-2 p-20 bg-gray-200'>
       <Routes>
         <Route path='/form' element={<JobForm />} />
+        <Route path='/jobs/:id/update' element={<Update />} />
         <Route path='/jobs' element={<Jobs />} />
         <Route path='/' element={<h1>Home</h1>} />
         <Route path='/jobs/:id' element={<ShowJob />} />

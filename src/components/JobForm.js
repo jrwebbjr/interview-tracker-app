@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import('../../App.css');
+import('../App.css');
 
 export default function JobForm(){
     const [jobForm, setJobForm] = useState({
@@ -370,7 +370,9 @@ export default function JobForm(){
                 <br/>
                 <div className="flex justify-center">
                     { !isPending && <button className="text-white p-2 pr-6 pl-6 rounded-full bg-indigo-600 shadow-lg " type="submit">Add Job</button> }
-                    { isPending && <button disabled className="text-white rounded-full bg-indigo-600 opacity-50 shadow-lg" type="submit">Adding Job... </button> }
+                    { isPending && <button disabled className="text-white rounded-full bg-indigo-600 opacity-50 shadow-lg" type="submit">
+                    <svg class="animate-spin h-5 w-5 mr-3 ...">
+                    </svg></button> }
                 </div>
                 </form>
             </div>

@@ -1,12 +1,15 @@
 
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
+import Button from '../../components/Button';
 
 export default function ShowJob(){
     const { id } = useParams()
 
-    const [job, setJob] = useState(null)
+    const Navigate = useNavigate();
+
+    const [job, setJob] = useState(null);
 
     useEffect(() => {
         (async () => {
@@ -19,15 +22,10 @@ export default function ShowJob(){
         })()
     }, [])
 
-    // const getJob = async() => {
-    //     const res = await axios.get('/api/jobs')
-    //     setJob(res.data)
-    // }
-
-    // useEffect(() => {
-    //     getJob()
-    // }, []) 
-
+    const handleClick = (id) => {
+            Navigate('/:id/update/')   
+        }
+    
     return(
         <>
             <div>
@@ -66,25 +64,17 @@ export default function ShowJob(){
                         </h2>
                         <h2>
                             Technical Notes: {job.technicalNotes}
-                        </h2> 
+                        </h2>
+                        <div>
+                            <Button onClick={handleClick(job._id)} /> 
+                            <Button onClick={handleClick(job._id)} />
+                        </div>
                     </div>
                     ) 
                         : 
-                        <div class="border border-blue-300 shadow rounded-md p-4 max-w-sm w-full mx-auto">
-                            <div class="animate-pulse flex space-x-4">
-                                <div class="rounded-full bg-slate-700 h-10 w-10"></div>
-                                <div class="flex-1 space-y-6 py-1">
-                                    <div class="h-2 bg-slate-700 rounded"></div>
-                                    <div class="space-y-3">
-                                        <div class="grid grid-cols-3 gap-4">
-                                        <div class="h-2 bg-slate-700 rounded col-span-2"></div>
-                                        <div class="h-2 bg-slate-700 rounded col-span-1"></div>
-                                    </div>
-                                    <div class="h-2 bg-slate-700 rounded"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <svg class="animate-bounce w-6 h-6 ...">
+                            Loading...
+                        </svg>
                     }
                     
                 </div>      
