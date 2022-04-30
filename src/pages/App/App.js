@@ -12,7 +12,7 @@ import ShowJob from '../showJob/ShowJob';
 
 function App() {
   return (
-    <main>
+    <main className='m-10 border-2 p-10'>
       <DefaultLayout />
       <Routes>
         <Route path='/form' element={<JobForm />} />

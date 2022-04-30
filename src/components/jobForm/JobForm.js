@@ -71,7 +71,7 @@ export default function JobForm(){
                             transition
                             ease-in-out
                             m-0
-                            focus:text-gray-700 focus:bg-white focus:border-fuchsia-600 focus:outline-none
+                            focus:text-gray-700 focus:bg-white focus:border-indigo-600 focus:outline-none
                         "/>
                     </div>
                 </div>
@@ -101,7 +101,7 @@ export default function JobForm(){
                             transition
                             ease-in-out
                             m-0
-                            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+                            focus:text-gray-700 focus:bg-white focus:border-indigo-600 focus:outline-none
                         "/>
                     </div>
                 </div>
@@ -131,7 +131,7 @@ export default function JobForm(){
                             transition
                             ease-in-out
                             m-0
-                            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+                            focus:text-gray-700 focus:bg-white focus:border-indigo-600 focus:outline-none
                         "
                         id="exampleText0"/>
                     </div>
@@ -161,7 +161,7 @@ export default function JobForm(){
                             transition
                             ease-in-out
                             m-0
-                            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+                            focus:text-gray-700 focus:bg-white focus:border-indigo-600 focus:outline-none
                         "/>
                     </div>
                 </div>
@@ -190,7 +190,7 @@ export default function JobForm(){
                             transition
                             ease-in-out
                             m-0
-                            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+                            focus:text-gray-700 focus:bg-white focus:border-indigo-600 focus:outline-none
                         "/>
                     </div>
                 </div>
@@ -219,7 +219,7 @@ export default function JobForm(){
                             transition
                             ease-in-out
                             m-0
-                            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+                            focus:text-gray-700 focus:bg-white focus:border-indigo-600 focus:outline-none
                         "/>
                     </div>
                 </div>
@@ -248,7 +248,7 @@ export default function JobForm(){
                             transition
                             ease-in-out
                             m-0
-                            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+                            focus:text-gray-700 focus:bg-white focus:border-indigo-600 focus:outline-none
                         "/>
                     </div>
                 </div>
@@ -277,7 +277,7 @@ export default function JobForm(){
                             transition
                             ease-in-out
                             m-0
-                            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+                            focus:text-gray-700 focus:bg-white focus:border-indigo-600 focus:outline-none
                         "/>
                     </div>
                 </div>
@@ -306,7 +306,7 @@ export default function JobForm(){
                             transition
                             ease-in-out
                             m-0
-                            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+                            focus:text-gray-700 focus:bg-white focus:border-indigo-600 focus:outline-none
                         "/>
                     </div>
                 </div>
@@ -331,7 +331,7 @@ export default function JobForm(){
                             transition
                             ease-in-out
                             m-0
-                            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+                            focus:text-gray-700 focus:bg-white focus:border-indigo-600 focus:outline-none
                             "
                             id="interview-notes-text-area"
                             rows="5">
@@ -361,15 +361,17 @@ export default function JobForm(){
                             transition
                             ease-in-out
                             m-0
-                            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+                            focus:text-gray-700 focus:bg-white focus:border-indigo-600 focus:outline-none
                         "
                         rows="5">
                         </textarea>
                     </div>
                 </div>
                 <br/>
-                { !isPending && <button className="text-white p-2 rounded-full bg-indigo-600 shadow-lg" type="submit">Add Job</button> }
-                { isPending && <button disabled className="text-white rounded-full bg-indigo-600 opacity-50 shadow-lg" type="submit">Adding Job... </button> }
+                <div className="flex justify-center">
+                    { !isPending && <button className="text-white p-2 pr-6 pl-6 rounded-full bg-indigo-600 shadow-lg " type="submit">Add Job</button> }
+                    { isPending && <button disabled className="text-white rounded-full bg-indigo-600 opacity-50 shadow-lg" type="submit">Adding Job... </button> }
+                </div>
                 </form>
             </div>
         </div>

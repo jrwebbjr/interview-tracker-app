@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-
+/* 
 :root {
   --custom-white: rgb(232, 232, 232);
   --terra-cotta: rgb(232, 116, 97);
@@ -48,7 +48,7 @@ body {
 }
 
 .button {
-  /* background-color: var(--blue-denim); */
+  background-color: var(--blue-denim);
   background: linear-gradient(217deg, rgba(18, 67, 125, 0.8), rgba(255,0,0,0) 80.71%),
               linear-gradient(127deg, rgba(0, 32, 71, 0.8), rgba(0,255,0,0) 80.71%),
               linear-gradient(360deg, rgba(186, 217, 181, 0.8), rgba(20,90,255,0) 20.71%);
@@ -121,10 +121,10 @@ body {
   margin-right: 10px;
 }
 
-/* .job-list {
+.job-list {
   display: flex;
   list-style:none;
-} */
+} 
 
 .cards {
   display: grid;
@@ -140,6 +140,4 @@ body {
   margin: 10px;
   border-radius: 16px;
   box-shadow: 5px 5px 10px 1px rgb(185, 185, 185);
-}
-
-  
+} */
