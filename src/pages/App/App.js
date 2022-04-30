@@ -3,7 +3,7 @@ import '../../../src/App.css';
 import { Route, Routes } from 'react-router-dom';
 // import Home from "../home/Home";
 import JobForm from "../../components/jobForm/JobForm";
-import DefaultLayout from '../layout/DefaultLayout';
+// import DefaultLayout from '../layout/DefaultLayout';
 // import Show from "../show/Show";
 // import Edit from "../edit/Edit";
 import Jobs from "../jobs/Jobs";
@@ -13,7 +13,7 @@ import ShowJob from '../showJob/ShowJob';
 function App() {
   return (
     <main className='m-10 border-2 p-10'>
-      <DefaultLayout />
+      {/* <DefaultLayout /> */}
       <Routes>
         <Route path='/form' element={<JobForm />} />
         <Route path='/jobs' element={<Jobs />} />
