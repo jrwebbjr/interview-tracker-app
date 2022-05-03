@@ -6,21 +6,21 @@ import axios from 'axios';
 
 const Jobs = () => {
 
-    const Navigate = useNavigate();
+    // const Navigate = useNavigate();
 
-    const [jobs, setJobs] = useState([])
-    const [loading, setLoading] = useState(true)
+    // const [jobs, setJobs] = useState([])
+    // const [loading, setLoading] = useState(true)
 
-    const fetchJobs = async() => {
-        setLoading(true);
-        const res = await axios.get('/api/jobs/')
-        setJobs(res.data)
-        setLoading(false);
-    }
+    // const fetchJobs = async() => {
+    //     setLoading(true);
+    //     const res = await axios.get('/api/jobs/')
+    //     setJobs(res.data)
+    //     setLoading(false);
+    // }
 
-    useEffect(() => {
-        fetchJobs()
-    }, []) 
+    // useEffect(() => {
+    //     fetchJobs()
+    // }, []) 
 
     const handleClick = (_id) => {
         Navigate(`/jobs/${_id}`)   
@@ -31,6 +31,7 @@ const Jobs = () => {
             jobs.map((job) => {
                 return (
                     <div className=''>
+                        { !loading ? 
                         <article key={job.id} className="">
                             <div class="flex">
                                 <div class="block p-6 rounded-lg shadow-lg bg-white border-2 border-solid border-indigo-600">
@@ -47,6 +48,11 @@ const Jobs = () => {
                                 </div>
                             </div>
                         </article>
+                        : 
+                            <svg class="animate-bounce w-6 h-6 ...">
+                                Loading...
+                            </svg>
+            }
                     </div>
                 ) 
             })
