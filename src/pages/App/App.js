@@ -12,7 +12,7 @@ import Jobs from "../jobIndex/JobIndex";
 import ShowJob from '../showJob/ShowJob';
 
 function App({ jobs, loading }) {
-
+//Todo: Figure out how to pass this state down to both jobs and Pagination
   const Navigate = useNavigate();
 
   const [jobs, setJobs] = useState([])
@@ -33,7 +33,7 @@ function App({ jobs, loading }) {
     <main className='m-0 border-2 p-20 bg-gray-200'>
       <Routes>
         <Route path='/form' element={<JobForm />} />
-        <Route path='/jobs/:id/update' element={<Update />} />
+        <Route path='/jobs/update/:id' element={<Update />} />
         <Route path='/jobs' element={<Jobs />} />
         <Route path='/' element={<h1>Home</h1>} />
         <Route path='/jobs/:id' element={<ShowJob />} />

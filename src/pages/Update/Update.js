@@ -1,7 +1,22 @@
 import ('../App.css');
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import DefaultLayout from ('../layout/DefaultLayout');
-
+//TODO: Check to see if this route works, either try postman or wait until you get your pagination working
 export default function Update(){
+    const Navigate = useNavigate();
+
+    const handleClick = async () => {
+        try{
+            const res = await axios.put('/api/jobs/')
+            Navigate(`/jobs/${_id}`) 
+        } catch(err) {
+            console.error(err)
+        }
+    }
+//TODO: FINISH DELETE BUTTON
+    const handleDelete = 
+
     return (
         <div>
             <DefaultLayout />
@@ -22,6 +37,8 @@ export default function Update(){
                     <input type="text" name="interviewNotes" defaultValue={this.props.job.interviewNotes} />  
                     <input type="text" name="technicalNotes" defaultValue={this.props.job.technicalNotes} /> 
                     <input type="submit" value="Update" />
+                    <Button onClick={handleClick}>Update</Button>
+                    <button onClick={handleDelete}>DELETE</button> 
                 </form>  
             </div>
         </div>
