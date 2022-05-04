@@ -2,7 +2,7 @@ import '../../../src/App.css';
 import { Route, Routes } from 'react-router-dom';
 import DefaultLayout from '../layout/DefaultLayout';
 import JobForm from "../../components/JobForm";
-// import Update from "../Update/Update";
+import Update from "../Update/Update";
 import JobIndex from "../jobIndex/JobIndex";
 import ShowJob from '../showJob/ShowJob';
 
@@ -37,7 +37,7 @@ function App() {
       <DefaultLayout />
       <Routes>
         <Route path='/form' element={<JobForm />} />
-        <Route path='/update/:id' element={<h1>Does this Route Work?</h1>} />
+        <Route path='/update/:id' element={<Update />} />
         <Route path='/jobs' element={<JobIndex />} />
         <Route path='/' element={<h1>Home</h1>} />
         <Route path='/jobs/:id' element={<ShowJob />} />
