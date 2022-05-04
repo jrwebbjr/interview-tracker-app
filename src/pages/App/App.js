@@ -1,6 +1,7 @@
 import '../../../src/App.css';
 import { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
+import { getUser } from '../../utilities/users-service';
 import AuthPage from '../authPage/AuthPage';
 import DefaultLayout from '../layout/DefaultLayout';
 import JobForm from "../../components/JobForm";
@@ -8,8 +9,9 @@ import Update from "../Update/Update";
 import JobIndex from "../jobIndex/JobIndex";
 import ShowJob from '../showJob/ShowJob';
 
+
 function App() {
-  // const [user, setUser] = useState(null);
+  const [user, setUser] = useState(getUser());
   // const Navigate = useNavigate();
 
   // const paginate = (pageNumber) => setCurrentPage(pageNumber);
@@ -38,17 +40,20 @@ function App() {
   return (
     <main className='m-0 border-2 p-20 bg-gray-200'>
       <DefaultLayout />
-      {
-        user ?
-      <Routes>
-        <Route path='/new' element={<JobForm />} />
-        <Route path='/update/:id' element={<Update />} />
-        <Route path='/index' element={<JobIndex />} />
-        <Route path='/' element={<AuthPage />} />
-        <Route path='/:id' element={<ShowJob />} />
-      </Routes> :
-      <AuthPage />
-      }         
+      { user ?
+        <>
+          <Routes>
+            <Route path='/new' element={<JobForm user={user} setUser={setUser} />} />
+            <Route path='/update/:id' element={<Update />} user={user} setUser={setUser} />
+            <Route path='/index' element={<JobIndex />} user={user} setUser={setUser} />
+            <Route path='/' element={<AuthPage />} user={user} setUser={setUser} />
+            <Route path='/:id' element={<ShowJob />} user={user} setUser={setUser} />
+            <Route path='/delete/:id' element={<Delete />} user={user} setUser={setUser} />
+          </Routes> 
+        </>
+          :
+          <AuthPage />
+          }         
     </main>
   );
 }

@@ -36,15 +36,6 @@ export default function Update(){
             console.error(error)
     } 
 }
-//TODO: FINISH DELETE BUTTON
-    // const handleDelete = async () => {
-    //     try{
-    //         const res = await axios.delete(`/api/jobs/${_id}`)
-    //         Navigate('/jobs')
-    //     } catch(err){
-    //         console.error(err)
-    //     }
-    // }
 
     return (
         <div>
@@ -65,8 +56,7 @@ export default function Update(){
                     <input type="text" onChange={handleChange} value={job.interviewNotes} name="interviewNotes" defaultValue={this.props.job.interviewNotes} />  
                     <input type="text" onChange={handleChange} value={job.technicalNotes} name="technicalNotes" defaultValue={this.props.job.technicalNotes} /> 
                     <input type="submit" value="Update" />
-                    {/* <Button onClick={handleClick}>Update</Button>
-                    <button onClick={handleDelete}>DELETE</button>  */}
+                    {/* <Button onClick={handleClick}>Update</Button> */}
                 </form>  
             </div>
         </div>
