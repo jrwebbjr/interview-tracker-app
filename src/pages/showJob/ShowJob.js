@@ -2,14 +2,11 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import Button from '../../components/Button';
 
 export default function ShowJob(){
     const { id } = useParams()
-
-    const Navigate = useNavigate();
-
     const [job, setJob] = useState(null);
+    const Navigate = useNavigate();
 
     useEffect(() => {
         (async () => {
@@ -22,10 +19,6 @@ export default function ShowJob(){
         })()
     }, [])
 
-    const handleClick = (id) => {
-            Navigate('/:id/update/')   
-        }
-    
     return(
         <>
             <div>
@@ -66,15 +59,15 @@ export default function ShowJob(){
                             Technical Notes: {job.technicalNotes}
                         </h2>
                         <div>
-                            <Button onClick={handleClick(job._id)} /> 
-                            <Button onClick={handleClick(job._id)} />
+                            <button onClick={() => Navigate(`/update/${id}`)}>Update Job</button>
                         </div>
                     </div>
                     ) 
                         : 
-                        <svg class="animate-bounce w-6 h-6 ...">
-                            Loading...
-                        </svg>
+                        <div>
+                            <h1>LOADING</h1>
+                            <svg class="animate-bounce w-6 h-6 ..."></svg>
+                        </div>
                     }
                     
                 </div>      

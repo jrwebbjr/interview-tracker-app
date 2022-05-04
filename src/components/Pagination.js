@@ -1,22 +1,22 @@
-import React from 'react';
+// import React from 'react';
 
-const Pagination = ({ jobsPerPage, totalJobs, paginate }) => {
-    const pageNumbers = [];
+// const Pagination = ({ jobsPerPage, totalJobs, paginate }) => {
+//     const pageNumbers = [];
 
-    for(let i = 1; i <= Math.ceil(totalJobs / jobsPerPage); i++){
-        pageNumbers.push(i);
-    }
-    return (
-        <div>
-            {pageNumbers.map(number => (
-                <li key={number} className="">
-                    <a onClick={() => paginate(number)} href="!#">
-                        {number}
-                    </a>
-                </li>
-            ))}
-        </div>
-    )
-}
+//     for(let i = 1; i <= Math.ceil(totalJobs / jobsPerPage); i++){
+//         pageNumbers.push(i);
+//     }
+//     return (
+//         <div>
+//             {pageNumbers.map(number => (
+//                 <li key={number} className="">
+//                     <a onClick={() => paginate(number)} href="!#">
+//                         {number}
+//                     </a>
+//                 </li>
+//             ))}
+//         </div>
+//     )
+// }
 
-export default Pagination
+// export default Pagination
