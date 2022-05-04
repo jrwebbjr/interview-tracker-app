@@ -1,4 +1,4 @@
-import SignUpForm from "../../components/SignUpForm/SignUpForm";
+import SignUpForm from "../../components/signUpForm/SignUpForm"
 
 export default function AuthPage(props){
     return (

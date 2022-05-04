@@ -61,6 +61,9 @@ export default function ShowJob(){
                         <div>
                             <button onClick={() => Navigate(`/update/${id}`)}>Update Job</button>
                         </div>
+                        <div>
+                            <button onClick={() => Navigate(`/delete/${id}`)}>Delete Job</button>
+                        </div>
                     </div>
                     ) 
                         : 
@@ -75,4 +78,3 @@ export default function ShowJob(){
         </>
         )
 }
-//TODO: Show selected job and have an update button to take to edit route for updates

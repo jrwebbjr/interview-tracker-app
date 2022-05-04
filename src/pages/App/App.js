@@ -1,5 +1,7 @@
 import '../../../src/App.css';
+import { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
+import AuthPage from '../authPage/AuthPage';
 import DefaultLayout from '../layout/DefaultLayout';
 import JobForm from "../../components/JobForm";
 import Update from "../Update/Update";
@@ -7,6 +9,7 @@ import JobIndex from "../jobIndex/JobIndex";
 import ShowJob from '../showJob/ShowJob';
 
 function App() {
+  // const [user, setUser] = useState(null);
   // const Navigate = useNavigate();
 
   // const paginate = (pageNumber) => setCurrentPage(pageNumber);
@@ -35,13 +38,17 @@ function App() {
   return (
     <main className='m-0 border-2 p-20 bg-gray-200'>
       <DefaultLayout />
+      {
+        user ?
       <Routes>
-        <Route path='/form' element={<JobForm />} />
+        <Route path='/new' element={<JobForm />} />
         <Route path='/update/:id' element={<Update />} />
-        <Route path='/jobs' element={<JobIndex />} />
-        <Route path='/' element={<h1>Home</h1>} />
-        <Route path='/jobs/:id' element={<ShowJob />} />
-      </Routes>
+        <Route path='/index' element={<JobIndex />} />
+        <Route path='/' element={<AuthPage />} />
+        <Route path='/:id' element={<ShowJob />} />
+      </Routes> :
+      <AuthPage />
+      }         
     </main>
   );
 }
