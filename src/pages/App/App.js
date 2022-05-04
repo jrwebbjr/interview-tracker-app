@@ -8,6 +8,7 @@ import JobForm from "../../components/JobForm";
 import Update from "../Update/Update";
 import JobIndex from "../jobIndex/JobIndex";
 import ShowJob from '../showJob/ShowJob';
+import Delete from '../delete/Delete';
 
 
 function App() {
