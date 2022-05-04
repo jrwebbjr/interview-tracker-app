@@ -8,16 +8,16 @@ export default function Update(){
 
     const Navigate = useNavigate();
 
-    const handleSubmit = async () => {
-        try{
-            const res = await axios.put(`/api/jobs/${_id}`, {
-                status: statusChange
-            })
-            Navigate(`/jobs/${_id}`) 
-        } catch(err) {
-            console.error(err)
-        }
-    }
+    // const handleSubmit = async () => {
+    //     try{
+    //         const res = await axios.put(`/api/jobs/${_id}`, {
+    //             status: statusChange
+    //         })
+    //         Navigate(`/jobs/${_id}`) 
+    //     } catch(err) {
+    //         console.error(err)
+    //     }
+    // }
 //TODO: FINISH DELETE BUTTON
     const handleDelete = async () => {
         try{
@@ -48,7 +48,7 @@ export default function Update(){
                     <input type="text" onChange={handleChange} value={job.interviewNotes} name="interviewNotes" defaultValue={this.props.job.interviewNotes} />  
                     <input type="text" onChange={handleChange} value={job.technicalNotes} name="technicalNotes" defaultValue={this.props.job.technicalNotes} /> 
                     <input type="submit" value="Update" />
-                    {/* <Button onClick={handleClick}>Update</Button> */}
+                    <Button onClick={handleClick}>Update</Button>
                     <button onClick={handleDelete}>DELETE</button> 
                 </form>   */}
             </div>

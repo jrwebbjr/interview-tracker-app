@@ -37,7 +37,7 @@ function App() {
       <DefaultLayout />
       <Routes>
         <Route path='/form' element={<JobForm />} />
-        <Route path='/jobs/update/:id' element={<h1>Does this Route Work?</h1>} />
+        <Route path='/update/:id' element={<h1>Does this Route Work?</h1>} />
         <Route path='/jobs' element={<JobIndex />} />
         <Route path='/' element={<h1>Home</h1>} />
         <Route path='/jobs/:id' element={<ShowJob />} />
