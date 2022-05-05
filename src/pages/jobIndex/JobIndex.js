@@ -2,9 +2,12 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import * as jobsApi from '../../utilities/jobs-api';
+import * as userService from '../../utilities/users-service';
 
 
-const JobIndex = () => {
+
+const JobIndex = ({ user, setUser }) => {
 
     const [jobs, setJobs] = useState([])
 
@@ -15,22 +18,29 @@ const JobIndex = () => {
     }
 
     const fetchJobs = async() => {
-        const res = await axios.get('/api/jobs/')
-        setJobs(res.data)
-        console.log(res.data)
+        const res = await jobsApi.getJobs(user._id)
+        setJobs(res)
     }
 
     useEffect(() => {
         fetchJobs()
     }, []) 
 
+    const handleLogout = (e) => {
+        e.preventDefault();
+
+        userService.logOut();
+        Navigate('/');
+    }
+
     return (
     <div>
         {
-            jobs.map((job) => {
+            jobs && jobs.map((job) => {
                 return (
                     <div className=''>
-                        <article key={job.id} className="">
+                        <button onClick={handleLogout}>Log Out</button>
+                        <article key={job._id} className="">
                             <div class="flex">
                                 <div class="block p-6 rounded-lg shadow-lg bg-white border-2 border-solid border-indigo-600">
                                     <h1 class="text-gray-900 text-xl font-bold leading-tight mb-5">{job.company}</h1>
@@ -55,5 +65,3 @@ const JobIndex = () => {
 }
 
 export default JobIndex
-
-        
