@@ -35,7 +35,7 @@ export default function JobForm(){
             method: "POST",
             headers: { "Content-Type": "application/json"},
             body: JSON.stringify(jobForm),
-        }); Navigate('/jobs');
+        }); Navigate('/index');
         }catch(error) {
             console.error(error)
     } finally {

@@ -40,7 +40,7 @@ function App() {
 
   return (
     <main className='m-0 border-2 p-20 bg-gray-200'>
-      <DefaultLayout />
+      
       { user ?
         <>
           <Routes>

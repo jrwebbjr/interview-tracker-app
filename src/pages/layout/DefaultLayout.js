@@ -1,6 +1,7 @@
+// // import NavBar from "../../components/NavBar";
 
-export default function DefaultLayout(){
-    return(
-        <h1>Default Layout</h1>
-    )
-}
+// export default function DefaultLayout(){
+//     return(
+//         <NavBar />
+//     )
+// }

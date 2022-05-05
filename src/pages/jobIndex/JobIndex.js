@@ -42,7 +42,7 @@ const JobIndex = ({ user, setUser }) => {
                         <button onClick={handleLogout}>Log Out</button>
                         <article key={job._id} className="">
                             <div class="flex">
-                                <div class="block p-6 rounded-lg shadow-lg bg-white border-2 border-solid border-indigo-600">
+                                <div class="block p-6 rounded-lg shadow-lg bg-white border-2 border-solid border-indigo-600 truncate">
                                     <h1 class="text-gray-900 text-xl font-bold leading-tight mb-5">{job.company}</h1>
                                     <p class="text-gray-700 text-base mb-4">
                                         {job.location}
