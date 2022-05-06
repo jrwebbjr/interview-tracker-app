@@ -48,7 +48,7 @@ function App() {
             <Route path='/update/:id' element={<Update user={user} setUser={setUser} />}  />
             <Route path='/index' element={<JobIndex user={user} setUser={setUser} />}  />
             <Route path='/' element={<AuthPage user={user} setUser={setUser} />}  />
-            <Route path='/:id/show' element={<ShowJob user={user} setUser={setUser} />}  />
+            <Route path='/:id/show' element={<h1>Show</h1>}  />//ROUTE PATH IS BROKEN, nothing rendering at this route
             <Route path='/delete/:id' element={<Delete user={user} setUser={setUser} />}  />
           </Routes> 
         </>
@@ -61,4 +61,4 @@ function App() {
 
 export default App;
 
-//TODO: set up ternary to show Home page if !user and jobs if user is signed in
+//TODO: set up ternary to show Home page if !user and jobs if user is signed in ShowJob user={user} setUser={setUser}

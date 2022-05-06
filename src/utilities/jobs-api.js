@@ -11,7 +11,7 @@ export function updateJob(userId) {
 }
 
 export function showJob(userId) {
-    return sendRequest(`http://localhost:3001/api/jobs/${userId}`, 'GET', null);
+    return sendRequest(`http://localhost:3001/api/jobs/${userId}/show`, 'GET', null);
 }
 
 export function Destroy(userId) {

@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import('../App.css');
 
-export default function JobForm(){
+export default function JobForm({ user, setUser }){
     const [jobForm, setJobForm] = useState({
         company: '',
         location: '',

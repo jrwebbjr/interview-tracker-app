@@ -70,12 +70,12 @@ export default function ShowJob({ user, setUser }){
                         <h2>
                             Technical Notes: {job.technicalNotes}
                         </h2>
-                        <div>
+                        {/* <div>
                             <button onClick={() => Navigate(`/update/${id}`)}>Update Job</button>
                         </div>
                         <div>
                             <button onClick={() => Navigate(`/delete/${id}`)}>Delete Job</button>
-                        </div>
+                        </div> */}
                     </div>
                     ) 
                         : 

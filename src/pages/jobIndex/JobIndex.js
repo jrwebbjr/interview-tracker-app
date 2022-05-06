@@ -13,7 +13,7 @@ const JobIndex = ({ user, setUser }) => {
     const Navigate = useNavigate();
 
     const handleClick = (_id) => {
-        Navigate(`/jobs/${_id}/show`)   
+        Navigate(`/jobs/${_id}/${jobs._id}/show`)   //added jobs id into route to see if this works
     }
 
     const fetchJobs = async() => {
