@@ -1,18 +1,19 @@
 import sendRequest from './send-request';
 
-const BASE_URL = 'http://localhost:3001/api/jobs';
+
 
 export function getJobs(userId) {
-  return sendRequest(`${BASE_URL}/user/${userId}/index`, 'GET', null);
+  return sendRequest(`http://localhost:3001/api/jobs/${userId}/index`, 'GET', null);
 }
 
 export function updateJob(userId) {
-    return sendRequest(`${BASE_URL}/user/${userId}/update`);
-}
-export function Job(userId) {
-    return sendRequest(`${BASE_URL}/user/${userId}/update`);
+    return sendRequest(`http://localhost:3001/api/jobs/${userId}/update`, 'PUT');
 }
 
-export function Delete(userId) {
-    return sendRequest(`${BASE_URL}/user/${userId}/delete`);
+export function showJob(userId) {
+    return sendRequest(`http://localhost:3001/api/jobs/${userId}`, 'GET', null);
+}
+
+export function Destroy(userId) {
+    return sendRequest(`http://localhost:3001/api/jobs/${userId}/delete`, 'DELETE');
 }

@@ -1,4 +1,5 @@
 import { Component } from "react";
+import { useNavigate } from "react-router-dom";
 import { signUp } from '../../utilities/users-service';
 
 export default class SignUpForm extends Component {
@@ -9,6 +10,7 @@ export default class SignUpForm extends Component {
         confirm: '',
         error: '',
     }
+
 
     handleChange = (evt) => {
         this.setState({...this.state, [evt.target.name]: evt.target.value, error: ''})
@@ -22,6 +24,7 @@ export default class SignUpForm extends Component {
             delete formData.confirm;
             const user = await signUp(formData)
             localStorage.setItem('token', user)
+            useNavigate('/index')
         } catch (error) {
             this.setState({ error: 'Sign Up Failed' })
         }

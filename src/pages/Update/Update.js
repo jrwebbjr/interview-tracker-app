@@ -42,7 +42,7 @@ export default function Update(){
             <div>
                 <h1> Update your Job </h1>  
                 <form className='' onSubmit={handleSubmit} method="PUT">
-                    <input type="text" onChange={handleChange} value={this.props.job.company} name="company" defaultValue={this.props.job.company} />
+                    <input type="text" onChange={handleChange} value={job.company} name="company" defaultValue={this.props.job.company} />
                     <input type="text" onChange={handleChange} value={job.location} name="location" defaultValue={this.props.job.location} />  
                     <input type="text" onChange={handleChange} value={job.position} name="position" defaultValue={this.props.job.position} /> 
                     <input type="text" onChange={handleChange} value={job.date} name="date" defaultValue={this.props.job.date} />   

@@ -2,22 +2,34 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import * as jobsApi from '../../utilities/jobs-api';
+import * as userService from '../../utilities/users-service';
 
-export default function ShowJob(){
+export default function ShowJob({ user, setUser }){
     const { id } = useParams()
     const [job, setJob] = useState(null);
     const Navigate = useNavigate();
 
+    const getJob = async() => {
+        const res = await jobsApi.showJob(id)
+        setJob(res)
+    }
+
     useEffect(() => {
-        (async () => {
-            try{
-                const res = await axios.get(`/api/jobs/${id}`)
-                setJob(res.data)
-            } catch (err){
-                console.log(err)
-            }
-        })()
-    }, [])
+        getJob()
+    }, []) 
+
+
+    // useEffect(() => {
+    //     (async () => {
+    //         try{
+    //             const res = await axios.get(`/api/jobs/${id}`)
+    //             setJob(res.data)
+    //         } catch (err){
+    //             console.log(err)
+    //         }
+    //     })()
+    // }, [])
 
     return(
         <>

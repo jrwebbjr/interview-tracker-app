@@ -48,7 +48,7 @@ function App() {
             <Route path='/update/:id' element={<Update user={user} setUser={setUser} />}  />
             <Route path='/index' element={<JobIndex user={user} setUser={setUser} />}  />
             <Route path='/' element={<AuthPage user={user} setUser={setUser} />}  />
-            <Route path='/:id' element={<ShowJob user={user} setUser={setUser} />}  />
+            <Route path='/:id/show' element={<ShowJob user={user} setUser={setUser} />}  />
             <Route path='/delete/:id' element={<Delete user={user} setUser={setUser} />}  />
           </Routes> 
         </>

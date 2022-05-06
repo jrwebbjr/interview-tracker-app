@@ -1,7 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
 import * as jobsApi from '../../utilities/jobs-api';
 import * as userService from '../../utilities/users-service';
 
@@ -14,7 +13,7 @@ const JobIndex = ({ user, setUser }) => {
     const Navigate = useNavigate();
 
     const handleClick = (_id) => {
-        Navigate(`/jobs/${_id}`)   
+        Navigate(`/jobs/${_id}/show`)   
     }
 
     const fetchJobs = async() => {
