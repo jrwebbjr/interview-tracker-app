@@ -1,5 +1,5 @@
-import sendRequest from './send-request';
 
+import sendRequest from './send-request';
 
 
 export function getJobs(userId) {
@@ -10,8 +10,8 @@ export function updateJob(userId) {
     return sendRequest(`http://localhost:3001/api/jobs/${userId}/update`, 'PUT');
 }
 
-export function showJob(userId) {
-    return sendRequest(`http://localhost:3001/api/jobs/${userId}/show`, 'GET', null);
+export function showJob(userId, id) {
+    return sendRequest(`http://localhost:3001/api/jobs/${userId}/show/${id}`, 'GET', null);
 }
 
 export function Destroy(userId) {

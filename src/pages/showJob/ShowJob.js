@@ -1,22 +1,19 @@
-
-import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import * as jobsApi from '../../utilities/jobs-api';
-import * as userService from '../../utilities/users-service';
 
 export default function ShowJob({ user, setUser }){
-    const { id } = useParams()
+    let params = useParams();
     const [job, setJob] = useState(null);
     const Navigate = useNavigate();
 
-    const getJob = async() => {
-        const res = await jobsApi.showJob(id)
+    const getJob = async(userId, id) => {
+        const res = await jobsApi.showJob(userId, id)
         setJob(res)
     }
 
     useEffect(() => {
-        getJob()
+        getJob(params.userId, params.id)
     }, []) 
 
 
@@ -81,7 +78,6 @@ export default function ShowJob({ user, setUser }){
                         : 
                         <div>
                             <h1>LOADING</h1>
-                            <svg class="animate-bounce w-6 h-6 ..."></svg>
                         </div>
                     }
                     

@@ -46,16 +46,16 @@ export default function JobForm({ user, setUser }){
         <div>
             <div className="form-container">
                 <form autoComplete="off" onSubmit={handleSubmit}>
-                <div class="flex justify-center">
-                    <div class="mb-3 xl:w-96">
-                        <label for="exampleText0" class="form-label inline-block mb-2 text-gray-700">Company</label>
+                <div className="flex justify-center">
+                    <div className="mb-3 xl:w-96">
+                        <label className="form-label inline-block mb-2 text-gray-700">Company</label>
                         <input
                         type="text"
                         name="company" 
                         value={jobForm.company}
                         onChange={handleChange}
                         required
-                        class="
+                        className="
                             form-control
                             block
                             w-full
@@ -76,16 +76,16 @@ export default function JobForm({ user, setUser }){
                     </div>
                 </div>
                 <br/>
-                <div class="flex justify-center">
+                <div className="flex justify-center">
                     <div class="mb-3 xl:w-96">
-                        <label for="exampleText0" class="form-label inline-block mb-2 text-gray-700">Location</label>
+                        <label className="form-label inline-block mb-2 text-gray-700">Location</label>
                         <input
                         type="text"
                         name="location" 
                         value={jobForm.location}
                         onChange={handleChange} 
                         required
-                        class="
+                        className="
                             form-control
                             block
                             w-full
@@ -106,16 +106,16 @@ export default function JobForm({ user, setUser }){
                     </div>
                 </div>
                 <br/>
-                <div class="flex justify-center">
-                    <div class="mb-3 xl:w-96">
-                        <label for="exampleText0" class="form-label inline-block mb-2 text-gray-700">Date</label>
+                <div className="flex justify-center">
+                    <div className="mb-3 xl:w-96">
+                        <label for="exampleText0" className="form-label inline-block mb-2 text-gray-700">Date</label>
                         <input
                         type="date"
                         name="date" 
                         value={jobForm.date}
                         onChange={handleChange}
                         required
-                        class="
+                        className="
                             form-control
                             block
                             w-full
@@ -132,20 +132,19 @@ export default function JobForm({ user, setUser }){
                             ease-in-out
                             m-0
                             focus:text-gray-700 focus:bg-white focus:border-indigo-600 focus:outline-none
-                        "
-                        id="exampleText0"/>
+                        "/>
                     </div>
                 </div>
                 <br/>
-                <div class="flex justify-center">
-                    <div class="mb-3 xl:w-96">
-                        <label for="exampleText0" class="form-label inline-block mb-2 text-gray-700">Position</label>
+                <div className="flex justify-center">
+                    <div className="mb-3 xl:w-96">
+                        <label for="exampleText0" className="form-label inline-block mb-2 text-gray-700">Position</label>
                         <input
                         type="text"
                         name="position"
                         value={jobForm.position}
                         onChange={handleChange}
-                        class="
+                        className="
                             form-control
                             block
                             w-full
@@ -166,15 +165,15 @@ export default function JobForm({ user, setUser }){
                     </div>
                 </div>
                 <br/>
-                <div class="flex justify-center">
-                    <div class="mb-3 xl:w-96">
-                        <label for="exampleText0" class="form-label inline-block mb-2 text-gray-700">Application Status</label>
+                <div className="flex justify-center">
+                    <div className="mb-3 xl:w-96">
+                        <label for="exampleText0" className="form-label inline-block mb-2 text-gray-700">Application Status</label>
                         <input
                         type="text"
                         name="status"
                         value={jobForm.status}
                         onChange={handleChange} 
-                        class="
+                        className="
                             form-control
                             block
                             w-full
@@ -195,15 +194,15 @@ export default function JobForm({ user, setUser }){
                     </div>
                 </div>
                 <br/>
-                <div class="flex justify-center">
-                    <div class="mb-3 xl:w-96">
-                        <label for="Application Service" class="form-label inline-block mb-2 text-gray-700">Application Service</label>
+                <div className="flex justify-center">
+                    <div className="mb-3 xl:w-96">
+                        <label for="Application Service" className="form-label inline-block mb-2 text-gray-700">Application Service</label>
                         <input
                         type="text"
                         name="service"
                         value={jobForm.service}
                         onChange={handleChange}
-                        class="
+                        className="
                             form-control
                             block
                             w-full
@@ -224,15 +223,15 @@ export default function JobForm({ user, setUser }){
                     </div>
                 </div>
                 <br/>
-                <div class="flex justify-center">
-                    <div class="mb-3 xl:w-96">
-                        <label for="Contacts" class="form-label inline-block mb-2 text-gray-700">Company Contacts</label>
+                <div className="flex justify-center">
+                    <div className="mb-3 xl:w-96">
+                        <label for="Contacts" className="form-label inline-block mb-2 text-gray-700">Company Contacts</label>
                         <input
                         type="text"
                         name="contacts"
                         value={jobForm.contacts}
                         onChange={handleChange}
-                        class="
+                        className="
                             form-control
                             block
                             w-full
@@ -253,15 +252,15 @@ export default function JobForm({ user, setUser }){
                     </div>
                 </div>
                 <br/>
-                <div class="flex justify-center">
-                    <div class="mb-3 xl:w-96">
-                        <label for="History" class="form-label inline-block mb-2 text-gray-700">Meeting History</label>
+                <div className="flex justify-center">
+                    <div className="mb-3 xl:w-96">
+                        <label for="History" className="form-label inline-block mb-2 text-gray-700">Meeting History</label>
                         <input
                         type="text"
                         name="history"
                         value={jobForm.history}
                         onChange={handleChange}
-                        class="
+                        className="
                             form-control
                             block
                             w-full
@@ -282,15 +281,15 @@ export default function JobForm({ user, setUser }){
                     </div>
                 </div>
                 <br/>
-                <div class="flex justify-center">
-                    <div class="mb-3 xl:w-96">
-                        <label for="Interview Process" class="form-label inline-block mb-2 text-gray-700">Interview Process</label>
+                <div className="flex justify-center">
+                    <div className="mb-3 xl:w-96">
+                        <label for="Interview Process" className="form-label inline-block mb-2 text-gray-700">Interview Process</label>
                         <input
                         type="text"
                         name="process"
                         value={jobForm.process}
                         onChange={handleChange}
-                        class="
+                        className="
                             form-control
                             block
                             w-full
@@ -311,11 +310,11 @@ export default function JobForm({ user, setUser }){
                     </div>
                 </div>
                 <br/>
-                <div class="flex justify-center">
-                    <div class="mb-3 xl:w-96">
-                        <label for="interview notes" class="form-label inline-block mb-2 text-gray-700">Interview Notes</label>
+                <div className="flex justify-center">
+                    <div className="mb-3 xl:w-96">
+                        <label for="interview notes" className="form-label inline-block mb-2 text-gray-700">Interview Notes</label>
                             <textarea 
-                            class="
+                            className="
                             form-control
                             block
                             w-full
@@ -339,13 +338,13 @@ export default function JobForm({ user, setUser }){
                     </div>
                 </div>
                 <br/>
-                <div class="flex justify-center">
-                    <div class="mb-3 xl:w-96">
-                        <label for="Technical Notes" class="form-label inline-block mb-2 text-gray-700">Technical Notes</label>
+                <div className="flex justify-center">
+                    <div className="mb-3 xl:w-96">
+                        <label for="Technical Notes" className="form-label inline-block mb-2 text-gray-700">Technical Notes</label>
                         <textarea
                         value={jobForm.technical}
                         onChange={handleChange}
-                        class="
+                        className="
                             form-control
                             block
                             w-full
