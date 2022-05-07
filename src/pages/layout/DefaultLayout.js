@@ -1,7 +1,7 @@
-// // import NavBar from "../../components/NavBar";
+import Nav from "../../components/Nav"
 
-// export default function DefaultLayout(){
-//     return(
-//         <NavBar />
-//     )
-// }
+export default function DefaultLayout(){
+    return(
+    <Nav />
+    )
+}

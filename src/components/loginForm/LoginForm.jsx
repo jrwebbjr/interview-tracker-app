@@ -31,14 +31,14 @@ async function handleSubmit(evt) {
 }
 
 return (
-  <div>
-    <div className="form-container">
+  <div className='flex justify-center'>
+    <div className="rounded-lg shadow-xlg bg-white border-2 w-96 p-6 m-10">
       <form autoComplete="off" onSubmit={handleSubmit}>
-        <label>Email</label>
-        <input type="text" name="email" value={credentials.email} onChange={handleChange} required />
-        <label>Password</label>
+        <label className=''>Email</label>
+        <input className="" type="text" name="email" value={credentials.email} onChange={handleChange} required />
+        <label className="ml-5">Password</label>
         <input type="password" name="password" value={credentials.password} onChange={handleChange} required />
-        <button type="submit">LOG IN</button>
+        <button className="nline-block px-6 py-2.5 bg-indigo-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700hover:shadow-lg focus:bg-indigo-700 focus:shadow-lg focus:outline-none focus:ring-0active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out" type="submit">LOG IN</button>
       </form>
     </div>
     <p className="error-message">&nbsp;{error}</p>
