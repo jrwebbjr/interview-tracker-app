@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react';
-import { isCompositeComponentWithType } from 'react-dom/test-utils';
-import { useParams, useNavigate, Link } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import * as jobsApi from '../../utilities/jobs-api';
 
-export default function ShowJob({ user, setUser }){
+export default function ShowJob({ user }){
     let { id } = useParams();
 
     const Navigate = useNavigate();
@@ -66,7 +65,7 @@ export default function ShowJob({ user, setUser }){
                             <button className='inline-block px-6 py-2.5 bg-indigo-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-cyan-500 hover:shadow-lg focus:bg-indigo-700 focus:shadow-lg focus:outline-none focus:ring-0active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out' onClick={handleClick}>Update
                             </button>
                             <div className="ml-6">
-                                <button className='nline-block px-6 py-2.5 bg-indigo-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-cyan-500 hover:shadow-lg focus:bg-indigo-700 focus:shadow-lg focus:outline-none focus:ring-0active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out' onClick={() => Navigate(`/delete/${job.id}`)}>Delete</button>
+                                <button className='nline-block px-6 py-2.5 bg-indigo-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-cyan-500 hover:shadow-lg focus:bg-indigo-700 focus:shadow-lg focus:outline-none focus:ring-0active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out' onClick={() => Navigate(`/delete/${job._id}`)}>Delete</button>
                             </div>
                         </div>
                     </div>

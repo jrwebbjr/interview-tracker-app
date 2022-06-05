@@ -1,20 +1,26 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 
-export default function Delete(){
-    const Navigate = useNavigate();
-    // const handleClick = async () => {
-    //     try{
-    //         const res = await axios.delete(`/api/jobs/${_id}`)
-    //         Navigate('/jobs')
-    //     } catch(err){
-    //         console.error(err)
-    //     }
-    // }
+export default function Delete({ user, didDelete ,setDidDelete }){
+    let { id } = useParams()
+
+    const Navigate = useNavigate({ user });
+
+    const handleClick = async () => {
+        try{ 
+            //TODO: Change your url routes to be correct like below...pass user.id in as props to work
+            await axios.delete(`http://localhost:3001/api/jobs/${user._id}/delete/${id}`).then(() => {
+                Navigate('/index')
+            })
+            setDidDelete(!didDelete)
+        } catch(err){
+            console.error(err)
+        }
+    }
     return (
         <>
             <h1>Are you sure you want to Permanently Delete this Job?</h1>
-            <button onClick=''>Delete</button>
+            <button onClick={handleClick}>Delete</button>
         </>
     )
 }

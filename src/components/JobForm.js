@@ -44,8 +44,8 @@ export default function JobForm({ user, setUser }){
 }
     return(
         <div>
-            <div className="form-container">
-                <form autoComplete="off" onSubmit={handleSubmit}>
+            <div className="flex justify-center min-h-full p-6">
+                <form className="rounded-lg shadow-xlg bg-white border-2 w-96 p-6 m-10" autoComplete="off" onSubmit={handleSubmit}>
                 <div className="flex justify-center">
                     <div className="mb-3 xl:w-96">
                         <label className="form-label inline-block mb-2 text-gray-700">Company</label>
@@ -368,8 +368,8 @@ export default function JobForm({ user, setUser }){
                 </div>
                 <br/>
                 <div className="flex justify-center">
-                    { !isPending && <button className="text-white p-2 pr-6 pl-6 rounded-full bg-indigo-600 shadow-lg " type="submit">Add Job</button> }
-                    { isPending && <button disabled className="text-white rounded-full bg-indigo-600 opacity-50 shadow-lg" type="submit">
+                    { !isPending && <button className="nline-block px-6 py-2.5 bg-indigo-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-cyan-500 hover:shadow-lg focus:bg-indigo-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out" type="submit"> Add Job</button> }
+                    { isPending && <button disabled className="nline-block px-6 py-2.5 bg-indigo-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-cyan-500 hover:shadow-lg focus:bg-indigo-700 focus:shadow-lg focus:outline-none focus:ring-0active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out" type="submit">
                     <svg class="animate-spin h-5 w-5 mr-3 ...">
                     </svg></button> }
                 </div>

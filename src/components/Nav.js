@@ -1,6 +1,5 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import * as userService from '../../src/utilities/users-service';
-import { Link } from 'react-router-dom';
 import UserLogOut from './userLogOut/UserLogOut';
 
 export default function Nav(){
@@ -16,13 +15,16 @@ export default function Nav(){
     const handleClick = () => {
         <UserLogOut />
         Navigate('/');
-    }  
-    
+    } 
+
+    const handleNavLink = () => {
+        Navigate('/new');
+    } 
 
     return (
         <nav class="flex items-center justify-between flex-wrap bg-gradient-to-l from-indigo-600 via-blue-600 to-cyan-600 p-6">
             <div class="flex items-center flex-shrink-0 text-white mr-6">
-                <span class="font-semibold text-xl tracking-tight">App-ly</span>
+                <span class="font-bold text-3xl tracking-tight">App-ly</span>
             </div>
             <div class="block lg:hidden">
                 <button class="flex items-center px-3 py-2 border rounded text-cyan-200 hover:text-white hover:border-white">
@@ -31,15 +33,15 @@ export default function Nav(){
             </div>
             <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
                 <div class="text-sm lg:flex-grow">
-                <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-cyan-200 hover:text-white mr-6">
+                <a onClick={<Link to="/index" />} class="block mt-4 lg:inline-block lg:mt-0 text-cyan-100 hover:text-white mr-6">
                     Jobs
                 </a>
-                <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-cyan-200 hover:text-white mr-6">
+                <a onClick={handleNavLink} class="block mt-4 lg:inline-block lg:mt-0 text-cyan-100 hover:text-white mr-6">
                     Create Job
                 </a>
                 </div>
                 <div>
-                <button onClick={handleClick} class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">Sign Out</button>
+                <button onClick={handleClick} class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-indigo-600 hover:bg-white mt-4 lg:mt-0">Sign Out</button>
                 </div>
             </div>
         </nav>

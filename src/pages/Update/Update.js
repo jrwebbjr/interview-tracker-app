@@ -1,6 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import axios from 'axios';
 import * as jobsApi from '../../utilities/jobs-api';
 
 export default function Update({ user, jobs }){
@@ -57,23 +56,226 @@ export default function Update({ user, jobs }){
 }
     return (
         <div>
-            <div>
-                <h1> Update your Job </h1>  
-                <form className='' onSubmit={handleSubmit}>
-                    <input type="text" ref={company} name="company" defaultValue={job.company} />
-                    <input type="text" ref={location} name="location" defaultValue={job.location} />  
-                    <input type="text" ref={position} name="position" defaultValue={job.position} /> 
-                    <input type="text" ref={date} name="date" defaultValue={job.date} />   
-                    <input type="text" ref={status} name="status" defaultValue={job.status} />  
-                    <input type="text" ref={applicationService} name="applicationService" 
-                    defaultValue={job.applicationService} />   
-                    <input type="text" ref={contacts} name="contacts" defaultValue={job.contacts} />  
-                    <input type="text" ref={history} name="history" defaultValue={job.history} />  
-                    <input type="text" ref={interviewProcess} name="interviewProcess" 
-                    defaultValue={job.interviewProcess} />  
-                    <input type="text" ref={interviewNotes} name="interviewNotes" defaultValue={job.interviewNotes} />  
-                    <input type="text" ref={technicalNotes} name="technicalNotes" defaultValue={job.technicalNotes} /> 
-                    <input type="submit" value="Update" />
+            <div className="flex justify-center min-h-full p-6">
+                <form className="rounded-lg shadow-xlg bg-white border-2 w-96 p-6 m-10" onSubmit={handleSubmit}>
+                    <div className="flex justify-center">
+                        <div className="mb-3 xl:w-96">
+                            <label className="form-label inline-block mb-2 mt-2 text-gray-700">Company</label>
+                            <input type="text" ref={company} name="company" defaultValue={job.company} className="
+                                    form-control
+                                    block
+                                    w-full
+                                    px-3
+                                    py-1.5
+                                    text-base
+                                    font-normal
+                                    text-gray-700
+                                    bg-white bg-clip-padding
+                                    border border-solid border-gray-300
+                                    rounded
+                                    shadow-lg
+                                    transition
+                                    ease-in-out
+                                    m-0
+                                    focus:text-gray-700 focus:bg-white focus:border-indigo-600 focus:outline-none
+                                " />
+                            <label className="form-label inline-block mb-2 mt-2 text-gray-700">Location</label>
+                            <input type="text" ref={location} name="location" defaultValue={job.location} className="
+                                    form-control
+                                    block
+                                    w-full
+                                    px-3
+                                    py-1.5
+                                    text-base
+                                    font-normal
+                                    text-gray-700
+                                    bg-white bg-clip-padding
+                                    border border-solid border-gray-300
+                                    rounded
+                                    shadow-lg
+                                    transition
+                                    ease-in-out
+                                    m-0
+                                    focus:text-gray-700 focus:bg-white focus:border-indigo-600 focus:outline-none
+                                " />
+                            <label className="form-label inline-block mb-2 mt-2 text-gray-700">Position</label>      
+                            <input type="text" ref={position} name="position" defaultValue={job.position} className="
+                                    form-control
+                                    block
+                                    w-full
+                                    px-3
+                                    py-1.5
+                                    text-base
+                                    font-normal
+                                    text-gray-700
+                                    bg-white bg-clip-padding
+                                    border border-solid border-gray-300
+                                    rounded
+                                    shadow-lg
+                                    transition
+                                    ease-in-out
+                                    m-0
+                                    focus:text-gray-700 focus:bg-white focus:border-indigo-600 focus:outline-none
+                                " />
+                            <label className="form-label inline-block mb-2 mt-2 text-gray-700">Date</label> 
+                            <input type="text" ref={date} name="date" defaultValue={job.date} className="
+                                    form-control
+                                    block
+                                    w-full
+                                    px-3
+                                    py-1.5
+                                    text-base
+                                    font-normal
+                                    text-gray-700
+                                    bg-white bg-clip-padding
+                                    border border-solid border-gray-300
+                                    rounded
+                                    shadow-lg
+                                    transition
+                                    ease-in-out
+                                    m-0
+                                    focus:text-gray-700 focus:bg-white focus:border-indigo-600 focus:outline-none
+                                " />
+                            <label className="form-label inline-block mb-2 mt-2 text-gray-700">Status</label>   
+                            <input type="text" ref={status} name="status" defaultValue={job.status} className="
+                                    form-control
+                                    block
+                                    w-full
+                                    px-3
+                                    py-1.5
+                                    text-base
+                                    font-normal
+                                    text-gray-700
+                                    bg-white bg-clip-padding
+                                    border border-solid border-gray-300
+                                    rounded
+                                    shadow-lg
+                                    transition
+                                    ease-in-out
+                                    m-0
+                                    focus:text-gray-700 focus:bg-white focus:border-indigo-600 focus:outline-none
+                                " />  
+                            <label className="form-label inline-block mb-2 mt-2 text-gray-700">Application Service Used</label>
+                            <input type="text" ref={applicationService} name="applicationService" 
+                            defaultValue={job.applicationService} className="
+                            form-control
+                            block
+                            w-full
+                            px-3
+                            py-1.5
+                            text-base
+                            font-normal
+                            text-gray-700
+                            bg-white bg-clip-padding
+                            border border-solid border-gray-300
+                            rounded
+                            shadow-lg
+                            transition
+                            ease-in-out
+                            m-0
+                            focus:text-gray-700 focus:bg-white focus:border-indigo-600 focus:outline-none
+                        " /> 
+                        <label className="form-label inline-block mb-2 mt-2 text-gray-700">Contacts</label>  
+                        <input type="text" ref={contacts} name="contacts" defaultValue={job.contacts} className="
+                                    form-control
+                                    block
+                                    w-full
+                                    px-3
+                                    py-1.5
+                                    text-base
+                                    font-normal
+                                    text-gray-700
+                                    bg-white bg-clip-padding
+                                    border border-solid border-gray-300
+                                    rounded
+                                    shadow-lg
+                                    transition
+                                    ease-in-out
+                                    m-0
+                                    focus:text-gray-700 focus:bg-white focus:border-indigo-600 focus:outline-none
+                                " />
+                            <label className="form-label inline-block mb-2 mt-2 text-gray-700">History</label>      
+                            <input type="text" ref={history} name="history" defaultValue={job.history} className="
+                                    form-control
+                                    block
+                                    w-full
+                                    px-3
+                                    py-1.5
+                                    text-base
+                                    font-normal
+                                    text-gray-700
+                                    bg-white bg-clip-padding
+                                    border border-solid border-gray-300
+                                    rounded
+                                    shadow-lg
+                                    transition
+                                    ease-in-out
+                                    m-0
+                                    focus:text-gray-700 focus:bg-white focus:border-indigo-600 focus:outline-none
+                                " />
+                            <label className="form-label inline-block mb-2 text-gray-700">Interview Process</label>  
+                            <input type="text" ref={interviewProcess} name="interviewProcess" 
+                            defaultValue={job.interviewProcess} className="
+                            form-control
+                            block
+                            w-full
+                            px-3
+                            py-1.5
+                            text-base
+                            font-normal
+                            text-gray-700
+                            bg-white bg-clip-padding
+                            border border-solid border-gray-300
+                            rounded
+                            shadow-lg
+                            transition
+                            ease-in-out
+                            m-0
+                            focus:text-gray-700 focus:bg-white focus:border-indigo-600 focus:outline-none
+                        " /> 
+                        <label className="form-label inline-block mb-2 mt-2 text-gray-700">Interview Notes</label> 
+                        <input type="text" ref={interviewNotes} name="interviewNotes" defaultValue={job.interviewNotes} className="
+                                    form-control
+                                    block
+                                    w-full
+                                    px-3
+                                    py-1.5
+                                    text-base
+                                    font-normal
+                                    text-gray-700
+                                    bg-white bg-clip-padding
+                                    border border-solid border-gray-300
+                                    rounded
+                                    shadow-lg
+                                    transition
+                                    ease-in-out
+                                    m-0
+                                    focus:text-gray-700 focus:bg-white focus:border-indigo-600 focus:outline-none
+                                " />
+                            <label className="form-label inline-block mb-2 mt-2 text-gray-700">Technical Notes</label>  
+                            <input type="text" ref={technicalNotes} name="technicalNotes" defaultValue={job.technicalNotes} className="
+                                    form-control
+                                    block
+                                    w-full
+                                    px-3
+                                    py-1.5
+                                    text-base
+                                    font-normal
+                                    text-gray-700
+                                    bg-white bg-clip-padding
+                                    border border-solid border-gray-300
+                                    rounded
+                                    shadow-lg
+                                    transition
+                                    ease-in-out
+                                    m-0
+                                    focus:text-gray-700 focus:bg-white focus:border-indigo-600 focus:outline-none
+                                " />
+                            <button className="nline-block px-6 py-2.5 bg-indigo-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-cyan-500 hover:shadow-lg focus:bg-indigo-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out" type="submit" value="Update">
+                                Update
+                            </button> 
+                        </div>
+                    </div>
                 </form>  
             </div>
         </div>
