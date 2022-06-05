@@ -18,9 +18,17 @@ export default function Delete({ user, didDelete ,setDidDelete }){
         }
     }
     return (
-        <>
-            <h1>Are you sure you want to Permanently Delete this Job?</h1>
-            <button onClick={handleClick}>Delete</button>
-        </>
+        <main>
+            <div className="flex justify-center min-h-full p-6">
+                <div className="rounded-lg shadow-xlg bg-white border-2 w-96 p-6 m-10">
+                    <h1>Are you sure you want to Permanently Delete this Job?</h1>
+                    <div className='flex justify-center pt-8'>
+                    <button className="nline-block px-6 py-2.5 bg-indigo-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-cyan-500 hover:shadow-lg focus:bg-indigo-700 focus:shadow-lg focus:outline-none focus:ring-0active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out" onClick={handleClick}>
+                    Delete
+                    </button>
+                    </div>
+                </div>
+            </div>
+        </main>
     )
 }

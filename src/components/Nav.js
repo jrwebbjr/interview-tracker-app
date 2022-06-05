@@ -17,6 +17,10 @@ export default function Nav(){
         Navigate('/');
     } 
 
+    const handleJobLink = () => {
+        Navigate(`/index`);
+    }
+
     const handleNavLink = () => {
         Navigate('/new');
     } 
@@ -33,7 +37,7 @@ export default function Nav(){
             </div>
             <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
                 <div class="text-sm lg:flex-grow">
-                <a onClick={<Link to="/index" />} class="block mt-4 lg:inline-block lg:mt-0 text-cyan-100 hover:text-white mr-6">
+                <a onClick={handleJobLink} class="block mt-4 lg:inline-block lg:mt-0 text-cyan-100 hover:text-white mr-6">
                     Jobs
                 </a>
                 <a onClick={handleNavLink} class="block mt-4 lg:inline-block lg:mt-0 text-cyan-100 hover:text-white mr-6">

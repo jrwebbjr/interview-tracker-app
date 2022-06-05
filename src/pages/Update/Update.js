@@ -271,9 +271,11 @@ export default function Update({ user, jobs }){
                                     m-0
                                     focus:text-gray-700 focus:bg-white focus:border-indigo-600 focus:outline-none
                                 " />
-                            <button className="nline-block px-6 py-2.5 bg-indigo-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-cyan-500 hover:shadow-lg focus:bg-indigo-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out" type="submit" value="Update">
+                            <div className='flex justify-center pt-8'>
+                                <button className="inline-block px-6 py-2.5 bg-indigo-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-cyan-500 hover:shadow-lg focus:bg-indigo-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out" type="submit" value="Update">
                                 Update
-                            </button> 
+                            </button>
+                            </div> 
                         </div>
                     </div>
                 </form>  

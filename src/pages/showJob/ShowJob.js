@@ -28,7 +28,7 @@ export default function ShowJob({ user }){
                 <div className='m-10 mb-5 block p-6 rounded-lg shadow-lg bg-white border-2 border-solid border-indigo-600 w-screen'>
                     { job ?
                     <div>
-                        <h1 className="text-5xl text-gray-800">
+                        <h1 className="font-owd font-extrabold text-5xl text-gray-800 pb-10">
                             {job.company}
                         </h1>
                         <h2 className='text-gray-800 text-lg'>
