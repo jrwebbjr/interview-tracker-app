@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import * as jobsApi from '../../utilities/jobs-api';
+import Nav from '../../components/Nav';
 
 export default function Update({ user, jobs }){
 
@@ -56,6 +57,7 @@ export default function Update({ user, jobs }){
 }
     return (
         <div>
+            <Nav />
             <div className="flex justify-center min-h-full p-6">
                 <form className="rounded-lg shadow-xlg bg-white border-2 w-96 p-6 m-10" onSubmit={handleSubmit}>
                     <div className="flex justify-center">

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import Nav from '../../components/Nav';
 import * as jobsApi from '../../utilities/jobs-api';
 
 export default function ShowJob({ user }){
@@ -24,6 +25,7 @@ export default function ShowJob({ user }){
 
     return(
         <>
+        <Nav />
             <div className='flex justify-center'>
                 <div className='m-10 mb-5 block p-6 rounded-lg shadow-lg bg-white border-2 border-solid border-indigo-600 w-screen'>
                     { job ?

@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Nav from "./Nav";
 import('../App.css');
 
 export default function JobForm({ user, setUser }){
@@ -44,6 +45,7 @@ export default function JobForm({ user, setUser }){
 }
     return(
         <div>
+            <Nav />
             <div className="flex justify-center min-h-full p-6">
                 <form className="rounded-lg shadow-xlg bg-white border-2 w-96 p-6 m-10" autoComplete="off" onSubmit={handleSubmit}>
                 <div className="flex justify-center">

@@ -35,31 +35,31 @@ export default class SignUpForm extends Component {
             <div className="min-h-full">
                 <div className="flex justify-center">
                     <div className="m-10 mb-5 block p-6 rounded-lg shadow-lg bg-white border-2 border-solid border-indigo-600">
-                        <form className="flex flex-col" autoComplete="off" onSubmit={this.handleSubmit}>
-                            <div className="p-6">
+                        <form className="flex flex-col gap-5" autoComplete="off" onSubmit={this.handleSubmit}>
+                            <div className="p-5">
                                 <label className="pr-4">Name </label>
-                                <input className="" type="text" name="name" value={this.state.name} onChange={this.handleChange} required />
+                                <input className="flex" type="text" name="name" value={this.state.name} onChange={this.handleChange} required />
                             </div>
-                            <div className="p-6">
+                            <div className="p-5">
                                 <label className="pr-4">Email </label>
-                                <input className="" type="email" name="email" value={this.state.email} onChange={this.handleChange} required />
+                                <input className="flex" type="email" name="email" value={this.state.email} onChange={this.handleChange} required />
                             </div>
-                            <div className="p-6">
+                            <div className="p-5">
                                 <label className="pr-4">Password </label>
-                                <input className="" type="password" name="password" value={this.state.password} onChange={this.handleChange} required />
+                                <input className="flex" type="password" name="password" value={this.state.password} onChange={this.handleChange} required />
                             </div>
-                            <div className="p-6">
+                            <div className="p-5">
                                 <label className="pr-4">Confirm </label>
-                                <input className="" type="password" name="confirm" value={this.state.confirm} onChange={this.handleChange} required />
+                                <input className="flex" type="password" name="confirm" value={this.state.confirm} onChange={this.handleChange} required />
                             </div>
                         <div className="flex justify-center">
                             <div className="">
                                 <button className="nline-block px-6 py-2.5 bg-indigo-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-cyan-500 hover:shadow-lg focus:bg-indigo-700 focus:shadow-lg focus:outline-none focus:ring-0active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out" type="submit" disabled={disable}>SIGN UP</button>
                             </div>
                         </div>
+                        <h2 className="">&nbsp;{this.state.error}</h2>
                         </form>
                     </div>
-                    <h2 className="">&nbsp;{this.state.error}</h2>
                 </div>
             </div>
         )

@@ -1,5 +1,6 @@
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
+import Nav from '../../components/Nav';
 
 export default function Delete({ user, didDelete ,setDidDelete }){
     let { id } = useParams()
@@ -19,6 +20,7 @@ export default function Delete({ user, didDelete ,setDidDelete }){
     }
     return (
         <main>
+            <Nav />
             <div className="flex justify-center min-h-full p-6">
                 <div className="rounded-lg shadow-xlg bg-white border-2 w-96 p-6 m-10">
                     <h1>Are you sure you want to Permanently Delete this Job?</h1>

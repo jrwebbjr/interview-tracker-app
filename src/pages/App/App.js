@@ -30,7 +30,6 @@ function App() {
     <main className='w-screen min-h-screen bg-gradient-to-r from-indigo-600 via-blue-600 to-cyan-500'>
       { user ?
         <>
-        <DefaultLayout />
           <Routes>
             <Route path='/new' element={<JobForm user={user} setUser={setUser} />} />
             <Route path='/update/:id' element={<Update user={user} setUser={setUser} jobs={jobs} />}  />

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import * as usersService from '../../utilities/users-service';
+import Nav from '../Nav';
 
 export default function LoginForm({ setUser }) {
 const [credentials, setCredentials] = useState({
@@ -26,28 +27,32 @@ async function handleSubmit(evt) {
     setUser(user);
     Navigate("/index");
   } catch(err) {
-    setError('Log In Failed - Try Again');
+    setError('Log In Failed Try Again or Sign Up if You Are A New User');
   }
 }
 
 return (
-  <div className='flex justify-center p-6'>
-    <div className="rounded-lg shadow-xlg bg-white border-2 w-screen p-6 m-10">
-      <form className="flex"autoComplete="off" onSubmit={handleSubmit}>
-        <div className='pl-6'> 
-            <label className='ml-5 pr-6'>Email </label>
-            <input className="" type="text" name="email" value={credentials.email} onChange={handleChange} required /></div>
-        <div className='pl-6'>
-            <label className="ml-5 pr-6">Password </label>
-            <input type="password" name="password" value={credentials.password} onChange={handleChange} required />
+  <main className='w-screen h-screen'>
+    <Nav />
+    <div className='flex justify-center items-center'>
+      <div className='flex flex-col justify-center h-max w-max'>
+        <div className="h-max w-max flex justify-center items-center rounded-lg shadow-xl bg-white border-2 border-indigo-600">
+          <form className="h-max w-max flex flex-col justify-center m-10" autoComplete="off" onSubmit={handleSubmit}>
+            <div className=' mb-5 '> 
+                <label className='flex'>Email </label>
+                <input className="shadow-xl rounded-lg" type="text" name="email" value={credentials.email} onChange={handleChange} required /></div>
+            <div className=' mt-5 '>
+                <label className="flex">Password </label>
+                <input type="password" name="password" value={credentials.password} onChange={handleChange} required />
+            </div>
+            <div className='flex justify-center m-10'>
+                <button className="flex px-6 py-2.5 bg-indigo-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-cyan-500 hover:shadow-lg focus:bg-indigo-700 focus:shadow-lg focus:outline-none focus:ring-0active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out" type="submit">LOG IN</button>
+            </div>
+            <p className="m-10 p-10 flex justify-center items-center rounded-lg shadow-xl">&nbsp;{error}</p>
+          </form>
         </div>
-        <div>
-            <button className="ml-6 nline-block px-6 py-2.5 bg-indigo-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-cyan-500 hover:shadow-lg focus:bg-indigo-700 focus:shadow-lg focus:outline-none focus:ring-0active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out" type="submit">LOG IN</button>
-        </div>
-        
-      </form>
+      </div>
     </div>
-    <p className="error-message">&nbsp;{error}</p>
-  </div>
+  </main>
 );
 }
