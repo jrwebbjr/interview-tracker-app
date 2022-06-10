@@ -26,7 +26,7 @@ export default function Nav(){
     } 
 
     return (
-        <nav class="flex items-center justify-between flex-wrap bg-gradient-to-l from-indigo-600 via-blue-600 to-cyan-600 p-6 border-b-4 sticky top-0">
+        <nav class="flex items-center justify-between flex-wrap bg-gradient-to-l from-indigo-600 via-blue-600 to-cyan-600 p-6 border-b-2 sticky top-0">
             <div class="flex items-center flex-shrink-0 text-white mr-6 ml-6">
                 <span class="font-bold text-6xl tracking-tight hover:text-indigo-600 cursor-none">App-ly</span>
             </div>
