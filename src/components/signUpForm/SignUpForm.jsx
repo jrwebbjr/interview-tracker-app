@@ -1,6 +1,7 @@
 import { Component } from "react";
 import { useNavigate } from "react-router-dom";
 import { signUp } from '../../utilities/users-service';
+import { motion } from "framer-motion";
 
 export default class SignUpForm extends Component {
     state = {
@@ -33,7 +34,11 @@ export default class SignUpForm extends Component {
         const disable = this.state.password !== this.state.confirm;
         return (
             <div className="min-h-full">
-                <div className="flex justify-center">
+                <motion.div 
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ ease: 'easeIn', duration: 1 }}
+                className="flex justify-center">
                     <div className="m-10 mb-5 block p-6 rounded-lg shadow-lg bg-white border-2 border-solid border-indigo-600">
                         <form className="flex flex-col gap-5" autoComplete="off" onSubmit={this.handleSubmit}>
                             <div className="p-5">
@@ -60,7 +65,7 @@ export default class SignUpForm extends Component {
                         <h2 className="">&nbsp;{this.state.error}</h2>
                         </form>
                     </div>
-                </div>
+                </motion.div>
             </div>
         )
     }

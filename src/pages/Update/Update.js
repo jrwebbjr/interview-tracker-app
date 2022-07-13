@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import * as jobsApi from '../../utilities/jobs-api';
 import Nav from '../../components/Nav';
 
@@ -58,7 +59,11 @@ export default function Update({ user, jobs }){
     return (
         <div>
             <Nav />
-            <div className="flex justify-center min-h-full p-6">
+            <motion.div 
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{ ease: 'easeIn', duration: 1 }}
+            className="flex justify-center min-h-full p-6">
                 <form className="rounded-lg shadow-xlg bg-white border-2 w-96 p-6 m-10" onSubmit={handleSubmit}>
                     <div className="flex justify-center">
                         <div className="mb-3 xl:w-96">
@@ -281,7 +286,7 @@ export default function Update({ user, jobs }){
                         </div>
                     </div>
                 </form>  
-            </div>
+            </motion.div>
         </div>
         
         

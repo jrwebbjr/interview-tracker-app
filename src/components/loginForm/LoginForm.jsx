@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import * as usersService from '../../utilities/users-service';
-import Nav from '../Nav';
+import { motion } from 'framer-motion';
 
 export default function LoginForm({ setUser }) {
 const [credentials, setCredentials] = useState({
@@ -33,8 +33,11 @@ async function handleSubmit(evt) {
 
 return (
   <main className='w-screen h-screen'>
-    <Nav />
-    <div className='flex justify-center items-center'>
+    <motion.div 
+    initial={{ scale: 0 }}
+    animate={{ scale: 1 }}
+    transition={{ ease: 'easeIn', duration: 1 }}
+    className='flex justify-center items-center'>
       <div className='flex flex-col justify-center h-max w-max'>
         <div className="h-max w-max flex justify-center items-center rounded-lg shadow-xl bg-white border-2 border-indigo-600">
           <form className="h-max w-max flex flex-col justify-center m-10" autoComplete="off" onSubmit={handleSubmit}>
@@ -52,7 +55,7 @@ return (
           </form>
         </div>
       </div>
-    </div>
+    </motion.div>
   </main>
 );
 }

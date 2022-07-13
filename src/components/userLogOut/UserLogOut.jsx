@@ -1,4 +1,5 @@
 import { logOut } from '../../utilities/users-service';
+import { motion } from 'framer-motion';
 
 export default function UserLogOut({ user, setUser }) {
 function handleLogOut() {
@@ -7,10 +8,14 @@ function handleLogOut() {
 }
 
 return (
-  <div className="">
+  <motion.div 
+  initial={{ scale: 0 }}
+  animate={{ scale: 1 }}
+  transition={{ ease: 'easeIn', duration: 1 }}
+  className="">
     <div>{user.name}</div>
     <div className="">{user.email}</div>
     <button className="" onClick={handleLogOut}>LOG OUT</button>
-  </div>
+  </motion.div>
 );
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import Nav from '../../components/Nav';
 import * as jobsApi from '../../utilities/jobs-api';
 import * as userService from '../../utilities/users-service';
@@ -31,7 +32,11 @@ const JobIndex = ({ user, setUser, jobs }) => {
                                         <div className='w-full h-full'>
                                             {/* <Link to={`/show/${job._id}`} onClick={() => {setJob(job)}} > */}
                                                 <article key={job._id} className="">
-                                                    <div className="w-[350px] h-[300px]">
+                                                    <motion.div 
+                                                    initial={{ scale: 0 }}
+                                                    animate={{ scale: 1 }}
+                                                    transition={{ ease: 'easeIn', duration: 1 }}
+                                                    className="w-[350px] h-[300px]">
                                                         <div className="min-w-[300px] min-h-[300px] flex flex-col justify-center items-center rounded-lg shadow-lg bg-white border-2 border-solid border-indigo-600 truncate">
                                                             <h1 className="text-gray-900 text-2xl font-bold leading-tight mb-5 truncate">{job.company}</h1>
                                                             <br/>
@@ -45,7 +50,7 @@ const JobIndex = ({ user, setUser, jobs }) => {
                                                                 Open</button>
                                                             </Link>
                                                         </div>
-                                                    </div>
+                                                    </motion.div>
                                                 </article>
                                             {/* </Link> */}
                                         </div>

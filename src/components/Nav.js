@@ -1,6 +1,8 @@
 import { useNavigate } from 'react-router-dom';
 import * as userService from '../../src/utilities/users-service';
 import UserLogOut from './userLogOut/UserLogOut';
+import { motion } from 'framer-motion';
+
 
 export default function Nav(){
     const Navigate = useNavigate();
@@ -26,9 +28,9 @@ export default function Nav(){
     } 
 
     return (
-        <nav class="flex items-center justify-between flex-wrap bg-gradient-to-l from-indigo-600 via-blue-600 to-cyan-600 p-6 border-b-2 sticky top-0">
+        <nav className="flex items-center justify-between flex-wrap bg-gradient-to-l from-indigo-600 via-blue-600 to-cyan-600 p-6 border-b-2 sticky top-0">
             <div class="flex items-center flex-shrink-0 text-white mr-6 ml-6">
-                <span class="font-bold text-6xl tracking-tight hover:text-indigo-600 cursor-none">App-ly</span>
+                <span class="font-bold text-6xl tracking-tight hover:text-indigo-600 cursor-none">Ap-ply</span>
             </div>
             {/* 
             //Hide mobile menu, leaving jobs and create job button in mobile view they just wrap now
